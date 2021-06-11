@@ -1,6 +1,7 @@
 var debounce = require('lodash.debounce');
 import PicturesApiService from './components/apiService.js'
 import eventTpl from '../templates/eventTpl.hbs';
+import modalTpl from '../templates/modalTpl.hbs';
 
 // import pontyfy styles and js
 import '@pnotify/core/dist/BrightTheme.css';
