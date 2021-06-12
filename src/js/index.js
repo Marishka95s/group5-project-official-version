@@ -1,5 +1,6 @@
 var debounce = require('lodash.debounce');
-import PicturesApiService from './components/apiService.js'
+import PicturesApiService from './components/apiService.js';
+import footer from './components/footer.js';
 import eventTpl from '../templates/eventTpl.hbs';
 import modalTpl from '../templates/modalTpl.hbs';
 
@@ -10,3 +11,5 @@ import '@pnotify/mobile/dist/PNotifyMobile.css';
 import {error} from '@pnotify/core/dist/PNotify.js';
 
 import '../sass/main.scss';
+
+
