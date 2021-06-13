@@ -9,7 +9,7 @@ export default class ApiService {
         this.page = 1; // left for pagination, if it is needed
 
         //get with width of browser window in pixels: document.documentElement.clientWidth;
-        this.size = (document.documentElement.clientWidth > 1279) ? 'size=20' : 'size=21'; // quantity of cards for 1 page
+        this.size = (document.documentElement.clientWidth > 1279) ? 'size=20' : 'size=21'; // quantity of cards per 1 page
     }
 
     fetchQuery() {
@@ -44,7 +44,7 @@ export default class ApiService {
                 const cardsArr = eventsArr.map(
                     (element) => {
                         
-                        // Responce Object destructuring chain for "date"
+                        // Responce Object destructuring chain for "imageUrl"
                         const {url} = element.images[2]
 
                         // Responce Object destructuring chain for "date"
