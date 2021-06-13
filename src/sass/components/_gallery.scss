@@ -77,7 +77,9 @@
   }
 }
 
-.event__item:hover,
-.event__item:focus {
-  transform: scale(1.03);
+.event__image:hover,
+.event__image:focus {
+  transform: scale(1.05);
+  transition-timing-function: $timing-function;
+  transition-duration: 500ms;
 }
