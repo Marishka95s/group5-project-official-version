@@ -680,7 +680,8 @@ template {
   color: #dc56c5;
   font-weight: 900;
   font-size: 18px;
-  line-height: 1.22;
+  line-height: 1.24;
+  margin-top: 0px;
   margin-bottom: 25px;
 }
 
@@ -695,6 +696,7 @@ template {
   .header-title {
     font-size: 50px;
     margin-bottom: 52px;
+    line-height: 1.23;
   }
 }
 
