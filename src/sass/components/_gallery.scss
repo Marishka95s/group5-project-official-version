@@ -77,3 +77,8 @@
     line-height: 20px;
   }
 }
+
+.event__item:hover,
+.event__item:focus {
+  transform: scale(1.03);
+}
