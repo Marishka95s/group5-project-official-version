@@ -755,8 +755,9 @@ template {
   color: #dc56c5;
   font-weight: 900;
   font-size: 18px;
-  line-height: 1.22;
+  line-height: 1.24;
   margin-bottom: 25px;
+  margin-top: 0px;
 }
 
 @media screen and (min-width: 768px) {
@@ -770,6 +771,7 @@ template {
   .header-title {
     font-size: 50px;
     margin-bottom: 52px;
+    line-height: 1.23;
   }
 }
 
@@ -779,6 +781,49 @@ template {
   left: 0;
   width: 106px;
   height: 90px;
+  padding-top: 24px;
+  padding-left: 23px;
+  background: rgba(196, 196, 196, 0.03);
+  border-bottom-right-radius: 100%;
+  backdrop-filter: blur(30px);
+}
+
+@media screen and (min-width: 768px) {
+  .logo {
+    padding-top: 40px;
+    padding-left: 40px;
+    width: 179px;
+    height: 152px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .logo {
+    width: 238px;
+    height: 200px;
+  }
+}
+
+.logo-svg {
+  width: 60px;
+  height: 30px;
+  margin-left: -25px;
+}
+
+@media screen and (min-width: 768px) {
+  .logo-svg {
+    width: 100px;
+    height: 50px;
+    margin-left: -40px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .logo-svg {
+    width: 136px;
+    height: 68px;
+    margin-left: -60px;
+  }
 }
 
 .input {
