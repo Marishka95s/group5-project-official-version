@@ -278,7 +278,7 @@ img {
 
 @media screen and (min-width: 768px) and (max-width: 1279px) {
   .main-part {
-    background-image: url("../images/bgBody-tablet@1x.png");
+    background-image: url("../images/body/bgBody-tablet@1x.png");
     background-size: 100%;
     background-position: center;
   }
@@ -286,32 +286,32 @@ img {
 
 @media screen and (min-width: 768px) and (max-width: 1279px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (max-width: 1279px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (max-width: 1279px) and (min-resolution: 2dppx) {
   .main-part {
-    background-image: url("../images/bgBody-tablet@2x.png");
+    background-image: url("../images/body/bgBody-tablet@2x.png");
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1279px) and (min-device-pixel-ratio: 3), screen and (min-width: 768px) and (max-width: 1279px) and (min-resolution: 288dpi), screen and (min-width: 768px) and (max-width: 1279px) and (min-resolution: 3dppx) {
   .main-part {
-    background-image: url("../images/bgBody-tablet@3x.png");
+    background-image: url("../images/body/bgBody-tablet@3x.png");
   }
 }
 
 @media screen and (min-width: 1280px) {
   .main-part {
-    background-image: url("../images/bgBody-desktop@1x.png");
+    background-image: url("../images/body/bgBody-desktop@1x.png");
     background-position: center;
   }
 }
 
 @media screen and (min-width: 1280px) and (min-device-pixel-ratio: 2), screen and (min-width: 1280px) and (min-resolution: 192dpi), screen and (min-width: 1280px) and (min-resolution: 2dppx) {
   .main-part {
-    background-image: url("../images/bgBody-desktop@2x.png");
+    background-image: url("../images/body/bgBody-desktop@2x.png");
   }
 }
 
 @media screen and (min-width: 1280px) and (min-device-pixel-ratio: 3), screen and (min-width: 1280px) and (min-resolution: 288dpi), screen and (min-width: 1280px) and (min-resolution: 3dppx) {
   .main-part {
-    background-image: url("../images/bgBody-desktop@3x.png");
+    background-image: url("../images/body/bgBody-desktop@3x.png");
   }
 }
 
@@ -654,24 +654,99 @@ template {
   display: none;
 }
 
+.back_to_top {
+  position: fixed;
+  bottom: 80px;
+  right: 30px;
+  z-index: 9999;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.85);
+  border-color: #f5f2f2;
+  color: #f5f2f2;
+  cursor: pointer;
+  border-radius: 1px;
+  display: none;
+}
+
+.back_to_top:hover {
+  background: rgba(220, 86, 197, 0.9);
+}
+
+.back_to_top_show {
+  display: block;
+}
+
 .header {
-  padding-top: 78px;
-  padding-bottom: 112px;
-  background-image: url(../images/hero.jpg);
+  background-image: url("../images/hero/mobile_background@1x.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100%;
+}
+
+@media screen and (min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
+  .header {
+    background-image: url("../images/hero/mobile_background@2x.jpg");
+  }
+}
+
+@media screen and (min-device-pixel-ratio: 3), screen and (min-resolution: 288dpi), screen and (min-resolution: 3dppx) {
+  .header {
+    background-image: url("../images/hero/mobile_background@3x.jpg");
+  }
 }
 
 @media screen and (min-width: 768px) {
   .header {
+    background-image: url("../images/hero/tablet_background@1x.jpg");
+  }
+}
+
+@media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
+  .header {
+    background-image: url("../images/hero/tablet_background@2x.jpg");
+  }
+}
+
+@media screen and (min-width: 768px) and (min-device-pixel-ratio: 3), screen and (min-width: 768px) and (min-resolution: 288dpi), screen and (min-width: 768px) and (min-resolution: 3dppx) {
+  .header {
+    background-image: url("../images/hero/tablet_background@3x.jpg");
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .header {
+    background-image: url("../images/hero/desktop_background@1x.jpg");
+  }
+}
+
+@media screen and (min-width: 1280px) and (min-device-pixel-ratio: 2), screen and (min-width: 1280px) and (min-resolution: 192dpi), screen and (min-width: 1280px) and (min-resolution: 2dppx) {
+  .header {
+    background-image: url("../images/hero/desktop_background@2x.jpg");
+  }
+}
+
+@media screen and (min-width: 1280px) and (min-device-pixel-ratio: 3), screen and (min-width: 1280px) and (min-resolution: 288dpi), screen and (min-width: 1280px) and (min-resolution: 3dppx) {
+  .header {
+    background-image: url("../images/hero/desktop_background@3x.jpg");
+  }
+}
+
+.header-components {
+  padding-top: 78px;
+  padding-bottom: 112px;
+}
+
+@media screen and (min-width: 768px) {
+  .header-components {
     padding-top: 40px;
     padding-bottom: 183px;
   }
 }
 
 @media screen and (min-width: 1280px) {
-  .header {
+  .header-components {
     padding-bottom: 192px;
   }
 }
@@ -680,8 +755,9 @@ template {
   color: #dc56c5;
   font-weight: 900;
   font-size: 18px;
-  line-height: 1.22;
+  line-height: 1.24;
   margin-bottom: 25px;
+  margin-top: 0px;
 }
 
 @media screen and (min-width: 768px) {
@@ -695,6 +771,7 @@ template {
   .header-title {
     font-size: 50px;
     margin-bottom: 52px;
+    line-height: 1.23;
   }
 }
 
@@ -704,6 +781,49 @@ template {
   left: 0;
   width: 106px;
   height: 90px;
+  padding-top: 24px;
+  padding-left: 23px;
+  background: rgba(196, 196, 196, 0.03);
+  border-bottom-right-radius: 100%;
+  backdrop-filter: blur(30px);
+}
+
+@media screen and (min-width: 768px) {
+  .logo {
+    padding-top: 40px;
+    padding-left: 40px;
+    width: 179px;
+    height: 152px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .logo {
+    width: 238px;
+    height: 200px;
+  }
+}
+
+.logo-svg {
+  width: 60px;
+  height: 30px;
+  margin-left: -25px;
+}
+
+@media screen and (min-width: 768px) {
+  .logo-svg {
+    width: 100px;
+    height: 50px;
+    margin-left: -40px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .logo-svg {
+    width: 136px;
+    height: 68px;
+    margin-left: -60px;
+  }
 }
 
 .input {
