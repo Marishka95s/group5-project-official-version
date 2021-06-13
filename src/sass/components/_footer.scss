@@ -21,3 +21,27 @@
 .back_to_top_show {
   display: block;
 }
+.footer-link {
+  color: rgb(245, 242, 242);
+}
+.footer-link:hover {
+  color: rgba(220, 86, 197, 0.9);
+  text-decoration: underline;
+}
+
+// .footer-p-main {
+//   border-top: 1px solid rgb(220, 86, 197);
+// }
+.footer-container {
+  margin: 0;
+  padding-top: 60px;
+  padding-bottom: 27px;
+
+  @media screen and (min-width: 768px) {
+    padding-bottom: 18px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding-top: 80px;
+   }
+}
