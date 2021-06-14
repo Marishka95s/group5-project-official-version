@@ -21,10 +21,11 @@
 .back_to_top_show {
   display: block;
 }
-.footer-link {
+.team-modal {
+  cursor: pointer;
   color: rgb(245, 242, 242);
 }
-.footer-link:hover {
+.team-modal:hover {
   color: rgba(220, 86, 197, 0.9);
   text-decoration: underline;
 }
@@ -43,5 +44,5 @@
 
   @media screen and (min-width: 1280px) {
     padding-top: 80px;
-   }
+  }
 }
