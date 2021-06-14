@@ -7,8 +7,8 @@ function onScroll() {
     const scrollTop = window.scrollY;   
     const lengthScroll = document.documentElement.clientHeight;  //возвращаем первый дочерний элемент документа HTML по высоте старницы
 
-console.log(scrollTop);
-console.log(lengthScroll);
+// console.log(scrollTop);
+// console.log(lengthScroll);
     if(scrollTop > lengthScroll) {
         btnGoTop.classList.add('back_to_top_show');
     } 
