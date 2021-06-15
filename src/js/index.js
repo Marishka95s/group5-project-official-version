@@ -9,14 +9,16 @@ import modalTpl from '../templates/modalTpl.hbs';
 import '@pnotify/core/dist/BrightTheme.css';
 import '@pnotify/core/dist/PNotify.css';
 import '@pnotify/mobile/dist/PNotifyMobile.css';
-import {error} from '@pnotify/core/dist/PNotify.js';
+import { error } from '@pnotify/core/dist/PNotify.js';
 
 import '../sass/main.scss';
-
+import './components/teamLightbox.js';
+import '../../node_modules/basiclightbox/dist/basicLightbox.min.css';
 
 // this block starts test EMPTY querry request for USA
 // the result is an Array of Objects => see console log
 const apiEvents = new ApiServiceEvents();
-apiEvents.fetchQuery().then(console.log)
-    .catch((error) => alert(error)
-);
+apiEvents
+  .fetchQuery()
+  .then(console.log)
+  .catch(error => alert(error));
