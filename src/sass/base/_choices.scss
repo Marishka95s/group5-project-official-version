@@ -89,6 +89,7 @@
   border-style: solid;
   border-color: #333333 transparent transparent transparent;
   border-width: 5px;
+
   position: absolute;
   right: 11.5px;
   top: 50%;
@@ -375,6 +376,7 @@
 
 .choices__placeholder {
   opacity: 0.5;
+  text-align: left;
 }
 
 /*=====  End of Choices  ======*/

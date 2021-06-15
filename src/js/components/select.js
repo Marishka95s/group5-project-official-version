@@ -3,6 +3,7 @@ const defaultSelect = () => {
     const choices = new Choices(element, {
         searchEnabled: false,
         position: 'bottom',
+        itemSelectText: '',
 
     });
 }
