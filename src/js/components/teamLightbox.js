@@ -1,14 +1,14 @@
 import * as basicLightbox from 'basiclightbox';
 import MariaUrl from '../../images/team/Maria.jpg';
 import YuliaUrl from '../../images/team/Yulia.jpg';
-import AndrewUrl from '../../images/team/git.jpg';
+import AndrewUrl from '../../images/team/Andrew.jpg';
 import BorysUrl from '../../images/team/Borys.jpg';
 import AndrewProsianykUrl from '../../images/team/AndrewProsianyk.jpg';
 import RostyslavUrl from '../../images/team/Rostyslav.jpg';
 import AllaUrl from '../../images/team/Alla.jpg';
-import SergeyProkopchukUrl from '../../images/team/git.jpg';
+import SergeyProkopchukUrl from '../../images/team/Serhii_Prokopchuk.jpg';
 import IevgenUrl from '../../images/team/Ievgen.jpg';
-import SergeySidorchukUrl from '../../images/team/git.jpg';
+import SergeySidorchukUrl from '../../images/team/Sergey.jpg';
 import spriteUrl from '../../images/sprite.svg';
 
 const markup = `<div class="team-wrapper"><div class="team-card">
