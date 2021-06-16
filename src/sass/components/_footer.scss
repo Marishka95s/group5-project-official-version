@@ -1,25 +1,30 @@
 .back_to_top {
   position: fixed;
-  bottom: 80px;
+  bottom: 60px;
   right: 30px;
   z-index: 9999;
-  width: 30px;
-  height: 30px;
   text-align: center;
-  background: rgba(255, 255, 255, 0.85);
-  border-color: rgb(245, 242, 242);
-  color: rgb(245, 242, 242);
+  color: rgba(220, 86, 197, 0.9);
   cursor: pointer;
-  border-radius: 1px;
   display: none;
+  background-color: Transparent;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
 }
 
 .back_to_top:hover {
-  background: rgba(220, 86, 197, 0.9);
+  transform: scale(1.6);
+  transition: box-shadow 0.9s, transform 0.7s;
 }
 
 .back_to_top_show {
   display: block;
+}
+
+.span-arrow {
+  font-size: 40px;
+  font-weight: 900;
 }
 .team-modal {
   cursor: pointer;

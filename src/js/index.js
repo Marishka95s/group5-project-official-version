@@ -1,6 +1,8 @@
 var debounce = require('lodash.debounce');
 import ApiServiceEvents from './components/apiServiceEvents.js';
+import ApiServiceOneEvent from './components/apiServiceOneEvent.js';
 import footer from './components/footer.js';
+import select from './components/select.js';
 
 import eventTpl from '../templates/eventTpl.hbs';
 import modalTpl from '../templates/modalTpl.hbs';
@@ -22,3 +24,4 @@ apiEvents
   .fetchQuery()
   .then(console.log)
   .catch(error => alert(error));
+
