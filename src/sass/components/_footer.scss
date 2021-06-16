@@ -21,15 +21,16 @@
 .back_to_top_show {
   display: block;
 }
+
 .span-arrow {
   font-size: 40px;
   font-weight: 900;
 }
-
-.footer-link {
+.team-modal {
+  cursor: pointer;
   color: rgb(245, 242, 242);
 }
-.footer-link:hover {
+.team-modal:hover {
   color: rgba(220, 86, 197, 0.9);
   text-decoration: underline;
 }
