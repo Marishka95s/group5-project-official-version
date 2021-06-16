@@ -6,7 +6,7 @@ import select from './components/select.js';
 import input from './components/searchInput.js';
 import eventTpl from '../templates/eventTpl.hbs';
 import modalTpl from '../templates/modalTpl.hbs';
-
+import pagination from './components/pagination.js';
 // import pontyfy styles and js
 import '@pnotify/core/dist/BrightTheme.css';
 import '@pnotify/core/dist/PNotify.css';
