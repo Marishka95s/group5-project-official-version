@@ -13,3 +13,21 @@
     </div>
 </li>
 {{/each}} --}}
+
+{{#each this}}
+<li class="event__item">
+    <div class="event_img">
+        <img src="{{images.url}}" alt="{{name}}" class="event__image">
+    </div>
+    <div class="event__info">
+        <h2 class="event__artist">{{{name}}}</h2>
+        <p class="event__date">{{dates.start.localDate}}</p>
+        <p class="event__place">
+            <svg class="event__icon" aria-label="Navigation map point">
+                <use class="icon-nav" href="./images/sprite.svg#icon-placemarker"></use>
+            </svg>
+            Palace of Ukraine
+        </p>
+    </div>
+</li>
+{{/each}}
