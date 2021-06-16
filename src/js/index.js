@@ -12,6 +12,7 @@ import '@pnotify/core/dist/BrightTheme.css';
 import '@pnotify/core/dist/PNotify.css';
 import '@pnotify/mobile/dist/PNotifyMobile.css';
 import { error } from '@pnotify/core/dist/PNotify.js';
+import preload from './components/preloader.js';
 
 import '../sass/main.scss';
 import './components/teamLightbox.js';

@@ -29,6 +29,6 @@ function onSearch(event) {
 function fetchEvents() {
     API.fetchQuery().then(card => {
         eventContainer.insertAdjacentHTML('beforeend', eventTpl(card))
-
+        
     })
 }

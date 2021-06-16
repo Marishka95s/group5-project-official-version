@@ -67,6 +67,7 @@ export default class ApiService {
                             imgAlt: `Image of '${element.name}'`,
                             event: element.name,
                             date: localDate,
+                            emb: venues,
                             venue: eventVenue,
                         };
                         
