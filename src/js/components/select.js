@@ -4,6 +4,7 @@ const defaultSelect = () => {
         searchEnabled: false,
         position: 'bottom',
         itemSelectText: '',
+        // resetScrollPosition: true,
 
     });
 }

@@ -160,6 +160,17 @@
 .choices__list {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #fff;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #5f5f5f;
+    border-radius: 10px;
+  }
 }
 .choices[data-type*='select-one'] .choices__inner {
   padding-bottom: 10px;
@@ -167,12 +178,20 @@
 .choices__list--single {
   padding: 0px;
 }
+.choices__item {
+  text-align: left;
+  &.choices__item--choice {
+    padding-left: 30px;
+    width: 100%;
+    word-wrap: break-word;
+  }
+}
 .choices__item--selectable {
   color: #cccccc;
-  // color: black;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
+  height: 40px;
 }
 .choices__inner {
   background: rgba(255, 255, 255, 0.2);
@@ -195,25 +214,47 @@
 }
 .choices__list--dropdown {
   background: rgba(255, 255, 255, 0.2);
-
   backdrop-filter: blur(20px);
 }
+.choices__list--dropdown .choices__list {
+  position: relative;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  will-change: scroll-position;
+  height: 170px;
+}
 
-.choices__list--dropdown .choices__item--selectable.is-highlighted {
-  background-color: #dc56c5;
-  color: #ffffff;
+.choices__list--dropdown .choices__item--selectable {
+  padding-right: 30px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  &.is-highlighted {
+    background-color: #dc56c5;
+    color: #ffffff;
+  }
 }
 
 .is-open .choices__list--dropdown {
   border: none;
 }
-.is-open .choices__list--dropdown::before {
+.choices__list--single {
+  text-align: left;
   position: absolute;
-  top: -1px;
-  left: 23px;
-  content: '';
-  width: 225px;
-  height: 2px;
-  // background-color: red;
-  background-color: #939393;
+  left: 30px;
+  top: 8px;
+}
+
+// .is-open .choices__list--dropdown::before {
+//   position: absolute;
+//   top: -1px;
+//   left: 23px;
+//   content: '';
+//   width: 225px;
+//   height: 2px;
+//   // background-color: red;
+//   background-color: #939393;
+// }
+.choices__item[data-id='4'] {
+  display: none;
 }
