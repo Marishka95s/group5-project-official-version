@@ -1,0 +1,108 @@
+.basicLightbox {
+  overflow: scroll;
+}
+
+.team-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  margin: -20px;
+
+  @media screen and (max-width: (320px - 1)) {
+    margin-top: 70px;
+  }
+
+  width: 240px;
+
+  background-color: $bg-modal;
+  border-radius: 15px 0;
+
+  @media screen and (min-width: 768px) {
+    width: 600px;
+
+    border-radius: 25px 0;
+  }
+
+  @media screen and (min-width: 1024px) {
+    margin: -30px;
+
+    width: 800px;
+  }
+}
+
+.team-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin: 5px;
+
+  width: calc((100% - 80px) / 2);
+
+  @media screen and (min-width: 768px) {
+    width: calc((100% - 160px) / 4);
+  }
+
+  @media screen and (min-width: 1024px) {
+    margin: 10px;
+
+    width: calc((100% - 240px) / 4);
+  }
+}
+
+.team-image {
+  margin-bottom: 10px;
+
+  width: 100%;
+
+  border-radius: 50% 0;
+  box-shadow: 5px 5px 11px -2px $btn-modal;
+}
+
+.team-name {
+  margin-bottom: 5px;
+  color: $title-text-color;
+  font-family: $montserrat;
+  font-weight: 700;
+}
+
+.team-role {
+  font-family: $montserrat;
+
+  @media screen and (max-width: (768px - 1)) {
+    font-size: 14px;
+  }
+
+  color: $title-text-color;
+}
+
+.team-git {
+  position: absolute;
+
+  top: 65px;
+  right: -10px;
+
+  @media screen and (min-width: 768px) {
+    top: 100px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    top: 120px;
+  }
+
+  &:hover,
+  &:focus {
+    transform: scale(1.5);
+  }
+}
+
+// footer
+
+.team-modal {
+  text-decoration: underline;
+  color: rgb(245, 242, 242);
+  cursor: pointer;
+}
