@@ -87,19 +87,19 @@
   height: 0;
   width: 0;
   border-style: solid;
-  border-color: #333333 transparent transparent transparent;
-  border-width: 5px;
+  border-color: #939393 transparent transparent transparent;
+  border-width: 8px;
 
   position: absolute;
-  right: 11.5px;
+  right: 30px;
   top: 50%;
   margin-top: -2.5px;
   pointer-events: none;
 }
 
 .choices[data-type*='select-one'].is-open:after {
-  border-color: transparent transparent #333333 transparent;
-  margin-top: -7.5px;
+  border-color: transparent transparent #939393 transparent;
+  margin-top: -12px;
 }
 
 .choices[data-type*='select-one'][dir='rtl']:after {
@@ -377,6 +377,7 @@
 .choices__placeholder {
   opacity: 0.5;
   text-align: left;
+  // max-height: 20px;
 }
 
 /*=====  End of Choices  ======*/
