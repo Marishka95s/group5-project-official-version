@@ -16,12 +16,9 @@
   width: 240px;
 
   background-color: $bg-modal;
-  border-radius: 15px 0;
 
   @media screen and (min-width: 768px) {
     width: 600px;
-
-    border-radius: 25px 0;
   }
 
   @media screen and (min-width: 1024px) {
