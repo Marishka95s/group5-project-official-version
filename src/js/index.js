@@ -25,4 +25,3 @@ apiEvents
   .fetchQuery()
   .then(console.log)
   .catch(error => alert(error));
-

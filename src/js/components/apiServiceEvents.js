@@ -10,6 +10,7 @@ export default class ApiService {
 
         //get with width of browser window in pixels: document.documentElement.clientWidth;
         this.size = (document.documentElement.clientWidth > 1279) ? 'size=20' : 'size=21'; // quantity of cards per 1 page
+        this.cardsArr = {};
     }
 
     fetchQuery() {
@@ -73,16 +74,23 @@ export default class ApiService {
                         
                         return card;
                     });
-            console.log('galleryCards for render ==>', cardsArr);////////////////////////////////////////////////////    
+                console.log('galleryCards for render ==>', cardsArr);////////////////////////////////////////////////////    
+                
             return cardsArr;
             })
 
 
     }
 
+    
+
     // left for pagination, if it is needed
     resetPage() {
         this.page = 0;
+    }
+
+    get cardsArray() {
+        return this.cardsArr;
     }
 
     get query() {
