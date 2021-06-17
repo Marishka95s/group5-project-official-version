@@ -1,7 +1,7 @@
 .header {
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url("../images/hero/mobile_background@1x.jpg");
+  background-image: url('../images/hero/mobile_background@1x.jpg');
   background-size: 100%;
 
   @media screen and (min-device-pixel-ratio: 2),
@@ -37,38 +37,38 @@
       background-image: url('../images/hero/tablet_background@3x.jpg');
     }
   }
-     
+
   @media screen and (min-width: 1280px) {
-    background-image: url("../images/hero/desktop_background@1x.jpg");
+    background-image: url('../images/hero/desktop_background@1x.jpg');
 
     @media screen and (min-device-pixel-ratio: 2),
       screen and (-o-min-device-pixel-ratio: 2/1),
       screen and (-webkit-min-device-pixel-ratio: 2),
       screen and (min-resolution: 192dpi),
       screen and (min-resolution: 2dppx) {
-      background-image: url("../images/hero/desktop_background@2x.jpg");
-      }
-      @media screen and (min-device-pixel-ratio: 3),
+      background-image: url('../images/hero/desktop_background@2x.jpg');
+    }
+    @media screen and (min-device-pixel-ratio: 3),
       screen and (-o-min-device-pixel-ratio: 3/1),
       screen and (-webkit-min-device-pixel-ratio: 3),
       screen and (min-resolution: 288dpi),
       screen and (min-resolution: 3dppx) {
-          background-image: url("../images/hero/desktop_background@3x.jpg");
-      }
+      background-image: url('../images/hero/desktop_background@3x.jpg');
+    }
   }
-  }
+}
 
 .header-components {
   padding-top: 78px;
   padding-bottom: 112px;
 
-    @media screen and (min-width: 768px) {
-        padding-top: 40px;
-        padding-bottom: 183px;
-    }
-    @media screen and (min-width: 1280px) {
-        padding-bottom: 192px;
-    }
+  @media screen and (min-width: 768px) {
+    padding-top: 40px;
+    padding-bottom: 183px;
+  }
+  @media screen and (min-width: 1280px) {
+    padding-bottom: 192px;
+  }
 }
 .header-title {
   color: #dc56c5;
@@ -161,11 +161,11 @@
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   &::-webkit-scrollbar {
-    width: 10px;
+    width: 3px;
   }
   &::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background-color: #fff;
+    border-radius: 20px;
+    background-color: #dc56c5;
   }
   &::-webkit-scrollbar-track {
     background-color: #5f5f5f;
