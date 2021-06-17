@@ -5,12 +5,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  //width: 300px;
+  position: relative;
 }
 .pagination-list .btn-next {
-  margin-left: 10px;
+  //margin-left: 10px; for common positionning
+  position: absolute;
+  transform: translateX(125px);
+  left: 50%;
+}
+
+.pagination-list .btn-prev {
+  position: absolute;
+  transform: translateX(-160px);
+  left: 50%;
 }
 
 .pagination-item {
+  // position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,7 +37,7 @@
   color: $primary-text-color;
   border: none;
   margin-right: 5px;
-  & span:hover {
+  & li:hover {
     color: $title-text-color;
     // border: 1px solid $title-text-color;
     // border-radius: 10px 0px;
@@ -36,6 +48,7 @@
 }
 
 .pagination-item.active {
+  //position: absolute;
   color: $title-text-color;
   border: 1px solid $title-text-color;
   border-radius: 10px 0px;
