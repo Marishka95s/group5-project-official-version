@@ -12,16 +12,16 @@ import SergeySidorchukUrl from '../../images/team/Sergey.jpg';
 import spriteUrl from '../../images/sprite.svg';
 
 const markup = `<div class="team-wrapper"><div class="team-card">
-    <img src="${MariaUrl}" alt="Maria" class="team-image">
-    <p class="team-name">Maria</p>
+    <img src="${MariaUrl}" alt="Mariia" class="team-image">
+    <p class="team-name">Mariia</p>
     <p class="team-role">Team Lead</p>
     <a href="https://github.com/Marishka95s" target="_blank" class="team-git"><svg class="logo__icon" width="24" height="24">
       <use href="${spriteUrl}#github"></use>
     </svg></a>
 </div>
 <div class="team-card">
-    <img src="${YuliaUrl}" alt="Yulia" class="team-image">
-    <p class="team-name">Yulia</p>
+    <img src="${YuliaUrl}" alt="Yuliia" class="team-image">
+    <p class="team-name">Yuliia</p>
     <p class="team-role">Scrum Master</p>
     <a href="https://github.com/YuliiaBond" target="_blank" class="team-git"><svg class="logo__icon" width="24" height="24">
       <use href="${spriteUrl}#github"></use>
