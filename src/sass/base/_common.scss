@@ -12,7 +12,7 @@ body {
   font-weight: normal;
   font-size: 14px;
   text-align: center;
-  background-color: #0E0E0E;
+  background-color: #0e0e0e;
   color: $primary-text-color;
 }
 
@@ -44,32 +44,30 @@ img {
 }
 
 //* Container box */
-.container {  
+.container {
   margin-right: auto;
-  margin-left: auto; 
+  margin-left: auto;
   // outline: 1px solid tomato;
 
   @media screen and (min-width: 320px) {
     width: 320px;
     padding-left: 25px;
     padding-right: 25px;
-    border-left: 1px solid $border-color; 
-    border-right: 1px solid $border-color;
-   }  
+  }
 
-   @media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     width: 595px;
     padding-left: 0;
-    padding-right: 0;    
-   }
+    padding-right: 0;
+  }
 
   @media screen and (min-width: 1280px) {
-   width: 1050px;
-   padding-left: 58px;
-   padding-right: 58px;
+    width: 1050px;
+    padding-left: 58px;
+    padding-right: 58px;
   }
 }
-.main-part {  
+.main-part {
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     background-image: url('../images/body/bgBody-tablet@1x.png');
     background-size: 100%;
@@ -77,24 +75,18 @@ img {
     background-repeat: no-repeat;
 
     @media screen and (min-device-pixel-ratio: 2),
-    screen and (-o-min-device-pixel-ratio: 2/1),
-    screen and (-webkit-min-device-pixel-ratio: 2),
-    screen and (min-resolution: 192dpi),
-    screen and (min-resolution: 2dppx) {
-      background-image: url("../images/body/bgBody-tablet@2x.png");
-      background-size: 100%;
-      background-position: center;
-      background-repeat: no-repeat;
+      screen and (-o-min-device-pixel-ratio: 2/1),
+      screen and (-webkit-min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: url('../images/body/bgBody-tablet@2x.png');
     }
     @media screen and (min-device-pixel-ratio: 3),
       screen and (-o-min-device-pixel-ratio: 3/1),
       screen and (-webkit-min-device-pixel-ratio: 3),
       screen and (min-resolution: 288dpi),
       screen and (min-resolution: 3dppx) {
-        background-image: url("../images/body/bgBody-tablet@3x.png");
-        background-size: 100%;
-        background-position: center;
-        background-repeat: no-repeat;
+      background-image: url('../images/body/bgBody-tablet@3x.png');
     }
   }
 
@@ -109,20 +101,14 @@ img {
       screen and (-webkit-min-device-pixel-ratio: 2),
       screen and (min-resolution: 192dpi),
       screen and (min-resolution: 2dppx) {
-        background-image: url("../images/body/bgBody-desktop@2x.png");
-        background-size: 100%;
-        background-position: center;
-        background-repeat: no-repeat;
-  }
+      background-image: url('../images/body/bgBody-desktop@2x.png');
+    }
     @media screen and (min-device-pixel-ratio: 3),
       screen and (-o-min-device-pixel-ratio: 3/1),
       screen and (-webkit-min-device-pixel-ratio: 3),
       screen and (min-resolution: 288dpi),
       screen and (min-resolution: 3dppx) {
-        background-image: url("../images/body/bgBody-desktop@3x.png");
-        background-size: 100%;
-        background-position: center;
-        background-repeat: no-repeat;
-  }
+      background-image: url('../images/body/bgBody-desktop@3x.png');
+    }
   }
 }

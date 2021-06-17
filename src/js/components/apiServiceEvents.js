@@ -10,6 +10,7 @@ export default class ApiService {
 
         //get with width of browser window in pixels: document.documentElement.clientWidth;
         this.size = (document.documentElement.clientWidth > 1279) ? 'size=20' : 'size=21'; // quantity of cards per 1 page
+        this.cardsArr = {};
     }
 
     fetchQuery() {
@@ -32,6 +33,7 @@ export default class ApiService {
                 this.page += 1; // left for pagination, if it is needed
                 const { page = {} } = data;
                 const { totalElements = 0 } = page;
+                console.log('20/21 events full RESPONCE ==>', data);////////////////////////////////////////////////////
                 if (totalElements != 0) {
                     return data;
                 }
@@ -40,6 +42,7 @@ export default class ApiService {
             })
             .then(({ _embedded }) => {
                 const eventsArr = _embedded.events;
+                
                  
                 const cardsArr = eventsArr.map(
                     (element) => {
@@ -58,15 +61,20 @@ export default class ApiService {
                         const eventVenue = venues[0].name;
 
                         const card = {
-                            id: element.id,
+                            id: element.id,  //on rendering "card.element" please put: data-value="${id}",
+                            //for ex. <li class="item" data-value="${id}">...</li>
+                            //on click we will get "id" for query: id = event.target.dataset.value
                             imgUrl: url,
                             imgAlt: `Image of '${element.name}'`,
                             event: element.name,
-                            data: localDate,
+                            date: localDate,
+                            emb: venues,
                             venue: eventVenue,
                         };
+                        
                         return card;
                     });
+                console.log('galleryCards for render ==>', cardsArr);////////////////////////////////////////////////////    
                 
             return cardsArr;
             })
@@ -74,9 +82,15 @@ export default class ApiService {
 
     }
 
+    
+
     // left for pagination, if it is needed
     resetPage() {
-        this.page = 1;
+        this.page = 0;
+    }
+
+    get cardsArray() {
+        return this.cardsArr;
     }
 
     get query() {
