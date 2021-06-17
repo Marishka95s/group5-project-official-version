@@ -4,19 +4,30 @@ let page = 1; // active page we start from
 
 
 element.innerHTML = createPagination(totalPages, page);
-element.firstElementChild.classList.add('active');
+
+if (totalPages != 1) { // for single page do not show pagination at all
+    element.firstElementChild.classList.add('active');  // in all other cases mark 1st page as active by default
+}
 
 element.addEventListener('click', onClick);
 
 function onClick(evt) {
-    console.log('evt.target.classList.contains:', evt.target.classList.contains('activeLi'), 'page=before-click:', page, 'type evt.target.textContent:', typeof evt.target.textContent);
-    if ((evt.target.nodeName !== 'SPAN')
-        || evt.target.classList.contains('active')) {  // Женя: contains dont work???
+    
+    const elemClicked = evt.target.nodeName;
+    if (elemClicked === 'UL')
+        //можно еще прописать выход, если клик по текущей активной странице (evt.currentTarget.firstElementChild.classList.contains('active')
+    {
         return;
     }
-    let currentPage = evt.target.textContent;
-    console.log('currentPage', currentPage);
     
+    let currentPage;
+    
+    if ( elemClicked === 'SPAN' ) {  // text taken from 'SPAN'
+        currentPage = evt.target.textContent; 
+    } else if (elemClicked === 'LI') {  // text taken from 'LI'
+        currentPage = evt.currentTarget.firstElementChild.textContent; 
+    }
+        
     if (currentPage === '...') {
         return;
     }
@@ -35,57 +46,58 @@ function onClick(evt) {
 
     page = Number(currentPage);
     createPagination(totalPages, page);
-
+    
 }
 
 function createPagination(totalPages, page) {
-    let liTag = '';
-    let activeLi;
-    console.log('Page', page,'  ','totalPages', totalPages);
-    let beforePages = (page > 1) ? page - 1 : page;   // Женя: это костылик - надо разобраться';
-    console.log('beforePages', beforePages);
-    let afterPages = (page < totalPages) ? page + 1 : page;   //Женя: это костылик - надо разобраться';
-    console.log('afterPages', afterPages);
 
-    if (totalPages === 1) {   // Женя: когда только 1 стр не рисуем
-        return;
+    if (totalPages === 1) {   // когда только 1 стр не рисуем
+        return '';
     }
 
-    if (page > 1) { //если страниц больше 1, добавляем li prev
+    let liTag = '';
+    let activeLi;
+    
+    let beforePage = page - 1;   // с какой кнопки отображаем;
+    let afterPage = page + 1;   //  по какую кнопку отображаем;
+    
+    // сколько страниц показывать до текущей страницы //how many pages or li show before the current li
+    if (page === totalPages) {
+        beforePage = beforePage - 1;
+        afterPage = totalPages;
+    } else if (page === totalPages - 1) {
+        beforePage = beforePage;
+        afterPage = totalPages;
+    }    
+        
+    // сколько страниц показывать после текущей страницы //how many pages or li show after the current li
+    if (page === 1) {
+        beforePage = 1;
+        afterPage = afterPage + 1;
+    } else if (page === 2) {
+        beforePage = 1;
+        afterPage = afterPage;
+    }
+
+    
+    // start drawing from left to right:
+    if (page >= 2) { //если текущая страница больше 1, добавляем li prev
         liTag += `<li class="pagination-item btn-prev" ><span>Prev</span></li>`;  //onclick="createPagination(totalPages, ${page - 1})"
         
     }
-
-    if(page > 2){ //если страниц больше 2, добавляем li 1
+    //убераем перехлёст в граничном случае totalPages = 3;
+    if ((totalPages != 3) && (page >= 3)) { //если текущая страница больше 2, добавляем li 1
+        
     liTag += `<li class="pagination-item first numb" ><span>1</span></li>`;  //onclick="createPagination(totalPages, 1)"
-    
-        if (page > 3) { //если страниц больше 3, добавляем ... после 1
+        if (page >= 4) { //если текущая страница больше 3, добавляем ... после 1
         liTag += `<li class="pagination-item dots"><span>...</span></li>`;
         }
+        
     }
 
+    
 
-    //Женя: это костылик - надо разобраться. С if (totalPages > 4) начало работать для totalPage=2
-    if (totalPages > 4) {
-        // сколько страниц показывают до текущей страницы
-    if (page === totalPages) {
-        beforePages = beforePages - 2;
-    } else if (page === totalPages - 1) {
-        beforePages = beforePages - 1;
-    }
-    }
-
-
-  // сколько страниц покаказывают после текущей страницы
-    if (page === 1) {
-        afterPages = afterPages + 2;
-    } else if (page === 2) {
-        afterPages  = afterPages + 1;
-    }
-
-
-
-    for (let plength = beforePages; plength <= afterPages; plength++) {
+    for (let plength = beforePage; plength <= afterPage; plength++) {
         if (plength > totalPages) { //если длина больше, чем общие число страниц, то продолжаем
             continue;
         }
@@ -100,13 +112,15 @@ function createPagination(totalPages, page) {
         liTag += `<li class="pagination-item numb ${activeLi}" ><span>${plength}</span></li>`;  //onclick="createPagination(totalPages, ${plength})"
     }
 
-    if (page < totalPages - 1) { //если значение страницы меньше общему количеству страниц -1, то показать последнюю страницу
-        if (page < totalPages - 2) { //если значение страницы меньше общему количеству страниц -2, то добавить ... перед последней страницей
+    
+    //двойным условием убераем перехлёст в граничном случае totalPages = 3;
+    if ((totalPages != 3) && (page < totalPages - 1)) { //если значение текущей страницы меньше общего количества страниц -1, то показать последнюю страницу
+        if (page < totalPages - 2) { //если значение текущей страницы меньше общего количества страниц -2, то добавить ... перед последней страницей
         liTag += `<li class="pagination-item dots"><span>...</span></li>`;
         }
     liTag += `<li class="pagination-item last numb" ><span>${totalPages}</span></li>`; //onclick="createPagination(totalPages, ${totalPages})"
     }
-    if (page < totalPages) { //если страниц меньше общему количеству страниц, то добавляем li next
+    if (page < totalPages) { //если текущая страница меньше общего количества страниц, то добавляем li next
         liTag += `<li class="pagination-item btn-next"><span>Next</span></li>`;  //onclick="createPagination(totalPages, ${page + 1})"
     
     }
