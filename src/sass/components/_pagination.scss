@@ -37,7 +37,7 @@
   color: $primary-text-color;
   border: none;
   margin-right: 5px;
-  & li:hover {
+  &:hover {
     color: $title-text-color;
     // border: 1px solid $title-text-color;
     // border-radius: 10px 0px;
