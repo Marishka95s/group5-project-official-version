@@ -16,12 +16,9 @@
   width: 240px;
 
   background-color: $bg-modal;
-  border-radius: 15px 0;
 
   @media screen and (min-width: 768px) {
     width: 600px;
-
-    border-radius: 25px 0;
   }
 
   @media screen and (min-width: 1024px) {
@@ -55,6 +52,7 @@
 
 .team-image {
   margin-bottom: 10px;
+  margin-top: 5px;
 
   width: 100%;
 
@@ -82,15 +80,16 @@
 .team-git {
   position: absolute;
 
-  top: 65px;
-  right: -10px;
+  top: 75px;
+  right: -7px;
 
   @media screen and (min-width: 768px) {
-    top: 100px;
+    top: 105px;
+    right: -1px;
   }
 
   @media screen and (min-width: 1024px) {
-    top: 120px;
+    top: 130px;
   }
 
   &:hover,
