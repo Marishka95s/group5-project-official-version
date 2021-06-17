@@ -102,6 +102,10 @@
     font-size: 16px;
     line-height: 20px;
   }
+  .event__image {
+    width: 180px;
+    height: 227px;
+  }
 }
 
 .event_img:hover,
@@ -109,4 +113,18 @@
   transform: scale(1.05);
   transition-timing-function: $timing-function;
   transition-duration: 500ms;
+}
+
+.event__image {
+  min-width: auto;
+  // height: 100%;
+  margin-bottom: 5px;
+  border-radius: 50px 0px;
+  object-fit: cover;
+}
+@media screen and (max-width: 767px) {
+  .event__image {
+    width: 128px;
+    height: 161px;
+  }
 }
