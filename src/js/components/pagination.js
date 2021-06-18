@@ -23,11 +23,11 @@ function onClick(evt) {
     
     let currentPage;
     
-    if ( elemClicked === 'SPAN' ) {  // text taken from 'SPAN'
+    if ( elemClicked === 'SPAN' ) {  // text taken if clicked on 'SPAN'
         currentPage = evt.target.textContent;
         console.log('currentPage:', currentPage);
     }
-    if (elemClicked === 'LI') {  // text taken from 'LI'
+    if (elemClicked === 'LI') {  // text taken if clicked on 'LI'
         currentPage = evt.target.firstElementChild.textContent;
         console.log('currentPage:', currentPage);
     }
