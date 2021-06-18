@@ -9,12 +9,19 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  width: 180px;
+  width: 128px;
   color: $title-text-color;
   font-weight: bold;
   margin-bottom: 5px;
   font-size: 14px;
   line-height: 17px;
+  
+  @media screen and (min-width: 768px) {
+      width: 180px;
+  }
+  @media screen and (min-width: 1280px) {
+      width: 180px;
+  }
 }
 .event__place {
   font-weight: 600;
@@ -25,8 +32,15 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  width: 181px;
+  width: 128px;
   display: block;
+
+  @media screen and (min-width: 768px) {
+    width: 180px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 180px;
+  }
 }
 .gallery_list {
   display: flex;
