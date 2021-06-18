@@ -1,0 +1,21 @@
+{{#each this}}
+
+	<li class='event__item' data-event-id='{{id}}'>
+		<img src='{{card.imgUrl}}' alt='{{card.imgAlt}}' class='event__img' />
+		<h2 class='event__name'>{{card.event}}</h2>
+		<p class='event__date'>{{card.data}}</p>
+		{{#if _embedded.eventVenue}}
+			<a
+				data-map='map'
+				class='event__place'
+				target='_blank'
+				href='https://www.google.com/maps/search/?api=1&query={{_embedded.eventVenue.location.latitude}},{{_embedded.eventVenue.location.longitude}}&query_place_id={{_embedded.eventVenue.id}}'
+			>
+            <svg class="event__icon" aria-label="Navigation map point">
+                <use class="icon-nav" href="./images/sprite.svg#icon-vector"></use>
+            </svg>
+            {{_embedded.eventVenue}}</a>
+		{{/if}}
+
+	</li>
+{{/each}}

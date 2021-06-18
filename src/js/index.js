@@ -1,5 +1,6 @@
 var debounce = require('lodash.debounce');
 import ApiServiceEvents from './components/apiServiceEvents.js';
+import cardsEl from '../templates/cards.hbs';
 import ApiServiceOneEvent from './components/apiServiceOneEvent.js';
 import footer from './components/footer.js';
 import select from './components/select.js';
