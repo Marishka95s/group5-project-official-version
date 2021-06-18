@@ -1,29 +1,66 @@
 .basicLightbox {
   overflow: scroll;
 }
+.logo__icon {
+  width: 20px;
+  height: 20px;
+
+  @media screen and (min-width: 768px) {
+    width: 22px;
+    height: 22px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 32px;
+    height: 32px
+  }
+}
+.btn_close{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color var(--animation-duration) var(--timing-function);
+    outline: none;
+    background-position: center;
+    background-size: 60%;
+    background-repeat: no-repeat;
+}
+.icon-close {
+  --color1: blue;
+  width: 40px;
+  height: 40px;
+}
+
 
 .team-wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
 
-  margin: -20px;
-
-  @media screen and (max-width: (320px - 1)) {
-    margin-top: 70px;
-  }
+  padding: 20px;
 
   width: 240px;
-
   background-color: $bg-modal;
+  margin-top: 300px;
 
   @media screen and (min-width: 768px) {
     width: 600px;
   }
 
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 1280px) {
     margin: -30px;
-
     width: 800px;
   }
 }
@@ -37,16 +74,16 @@
 
   margin: 5px;
 
-  width: calc((100% - 80px) / 2);
+  width: calc((100% - 40px) / 2);
 
   @media screen and (min-width: 768px) {
     width: calc((100% - 160px) / 4);
   }
 
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 1280px) {
     margin: 10px;
 
-    width: calc((100% - 240px) / 4);
+    width: calc((100% - 280px) / 4);
   }
 }
 
@@ -80,16 +117,17 @@
 .team-git {
   position: absolute;
 
-  top: 75px;
-  right: -7px;
+  top: 73px;
+  right: -9px;
 
   @media screen and (min-width: 768px) {
-    top: 105px;
-    right: -1px;
+    top: 93px;
+    right: -7px;
   }
 
-  @media screen and (min-width: 1024px) {
-    top: 130px;
+  @media screen and (min-width: 1280px) {
+    top: 105px;
+    right: -16px;
   }
 
   &:hover,
