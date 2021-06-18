@@ -1,8 +1,15 @@
-.event__icon {
+.icon__nav, .event__icon {
   height: 10px;
   width: 7px;
+  fill: #ffffff;
+  --color3: #fff;
+  background-color: #000;
 }
-.event__artist {
+.event__artist {  
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 180px;
   color: $title-text-color;
   font-weight: bold;
   margin-bottom: 5px;
@@ -14,6 +21,12 @@
   font-size: 12px;
   line-height: 15px;
   color: $primary-text-color;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 181px;
+  display: block;
 }
 .gallery_list {
   display: flex;
@@ -133,8 +146,10 @@
 }
 .container__gallery {
   display: inline-block;
+  text-align: center;
 }
 .gallery {
   position: relative;
   top: -60px;
+  text-align: left;
 }
