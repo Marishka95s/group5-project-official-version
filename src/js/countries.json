@@ -1,0 +1,134 @@
+[
+  {
+    "text": "Andorra", 
+    "id": "AD"
+  },
+  {
+    "text": "Australia", 
+    "id": "AU"
+  },
+  {
+    "text": "Austria", 
+    "id": "AT"
+  },
+  {
+    "text": "Belarus", 
+    "id": "BY"
+  },
+  {
+    "text": "Belgium", 
+    "id": "BE"
+  },
+  {
+    "text": "Brazil", 
+    "id": "BR"
+  },
+  {
+    "text": "Canada", 
+    "id": "CA"
+  },
+  {
+    "text": "Czech Republic", 
+    "id": "CZ"
+  },
+  {
+    "text": "Denmark", 
+    "id": "DK"
+  },
+  {
+    "text": "Estonia", 
+    "id": "EE"
+  },
+  {
+    "text": "Finland", 
+    "id": "FI"
+  },
+  {
+    "text": "France", 
+    "id": "FR"
+  },
+  {
+    "text": "Germany", 
+    "id": "DE"
+  },
+  {
+    "text": "Ireland", 
+    "id": "IE"
+  },
+  {
+    "text": "Israel", 
+    "id": "IL"
+  },
+  {
+    "text": "Italy", 
+    "id": "IT"
+  },
+  {
+    "text": "Latvia", 
+    "id": "LV"
+  },
+  {
+    "text": "Liechtenstein", 
+    "id": "LI"
+  },
+  {
+    "text": "Luxembourg", 
+    "id": "LU"
+  },
+  {
+    "text": "Macedonia", 
+    "id": "MK"
+  },
+  {
+    "text": "Mexico", 
+    "id": "MX"
+  },
+  {
+    "text": "Netherlands", 
+    "id": "NL"
+  },
+  {
+    "text": "New Zealand", 
+    "id": "NZ"
+  },
+  {
+    "text": "Norway", 
+    "id": "NO"
+  },
+  {
+    "text": "Poland", 
+    "id": "PL"
+  },
+  {
+    "text": "Portugal", 
+    "id": "PT"
+  },
+  {
+    "text": "Spain", 
+    "id": "ES"
+  },
+  {
+    "text": "Sweden", 
+    "id": "SE"
+  },
+  {
+    "text": "Switzerland", 
+    "id": "CH"
+  },
+  {
+    "text": "Ukraine", 
+    "id": "UA"
+  },
+  {
+    "text": "United Arab Emirates", 
+    "id": "AE"
+  },
+  {
+    "text": "United Kingdom", 
+    "id": "UK"
+  },
+  {
+    "text": "USA", 
+    "id": "US"
+  }
+]
