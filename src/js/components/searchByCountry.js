@@ -24,8 +24,8 @@ inner.addEventListener('change', () => {
 })
 
 function fetchEvents() {
-    cntrySrch.fetchQuery().then(data => {
-        eventContainer.insertAdjacentHTML('beforeend', eventTpl(data))
+    cntrySrch.fetchQuery().then(card => {
+        eventContainer.insertAdjacentHTML('beforeend', eventTpl(card))
 
     })
 }
