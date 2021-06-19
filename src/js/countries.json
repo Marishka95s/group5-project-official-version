@@ -1,134 +1,133 @@
-[
-  {
-    "text": "Andorra", 
-    "id": "AD"
+[ {
+    "label": "Andorra", 
+    "value": "AD"
   },
   {
-    "text": "Australia", 
-    "id": "AU"
+    "label": "Australia", 
+    "value": "AU"
   },
   {
-    "text": "Austria", 
-    "id": "AT"
+    "label": "Austria", 
+    "value": "AT"
   },
   {
-    "text": "Belarus", 
-    "id": "BY"
+    "label": "Belarus", 
+    "value": "BY"
   },
   {
-    "text": "Belgium", 
-    "id": "BE"
+    "label": "Belgium", 
+    "value": "BE"
+  },
+            {
+    "label": "Brazil", 
+    "value": "BR"
   },
   {
-    "text": "Brazil", 
-    "id": "BR"
+    "label": "Canada", 
+    "value": "CA"
   },
   {
-    "text": "Canada", 
-    "id": "CA"
+    "label": "Czech Republic", 
+    "value": "CZ"
   },
   {
-    "text": "Czech Republic", 
-    "id": "CZ"
+    "label": "Denmark", 
+    "value": "DK"
   },
   {
-    "text": "Denmark", 
-    "id": "DK"
+    "label": "Estonia", 
+    "value": "EE"
   },
   {
-    "text": "Estonia", 
-    "id": "EE"
+    "label": "Finland", 
+    "value": "FI"
   },
   {
-    "text": "Finland", 
-    "id": "FI"
+    "label": "France", 
+    "value": "FR"
   },
   {
-    "text": "France", 
-    "id": "FR"
+    "label": "Germany", 
+    "value": "DE"
   },
   {
-    "text": "Germany", 
-    "id": "DE"
+    "label": "Ireland", 
+    "value": "IE"
   },
   {
-    "text": "Ireland", 
-    "id": "IE"
+    "label": "Israel", 
+    "value": "IL"
   },
   {
-    "text": "Israel", 
-    "id": "IL"
+    "label": "Italy", 
+    "value": "IT"
   },
   {
-    "text": "Italy", 
-    "id": "IT"
+    "label": "Latvia", 
+    "value": "LV"
   },
   {
-    "text": "Latvia", 
-    "id": "LV"
+    "label": "Liechtenstein", 
+    "value": "LI"
   },
   {
-    "text": "Liechtenstein", 
-    "id": "LI"
+    "label": "Luxembourg", 
+    "value": "LU"
   },
   {
-    "text": "Luxembourg", 
-    "id": "LU"
+    "label": "Macedonia", 
+    "value": "MK"
   },
   {
-    "text": "Macedonia", 
-    "id": "MK"
+    "label": "Mexico", 
+    "value": "MX"
   },
   {
-    "text": "Mexico", 
-    "id": "MX"
+    "label": "Netherlands", 
+    "value": "NL"
   },
   {
-    "text": "Netherlands", 
-    "id": "NL"
+    "label": "New Zealand", 
+    "value": "NZ"
   },
   {
-    "text": "New Zealand", 
-    "id": "NZ"
+    "label": "Norway", 
+    "value": "NO"
   },
   {
-    "text": "Norway", 
-    "id": "NO"
+    "label": "Poland", 
+    "value": "PL"
   },
   {
-    "text": "Poland", 
-    "id": "PL"
+    "label": "Portugal", 
+    "value": "PT"
   },
   {
-    "text": "Portugal", 
-    "id": "PT"
+    "label": "Spain", 
+    "value": "ES"
   },
   {
-    "text": "Spain", 
-    "id": "ES"
+    "label": "Sweden", 
+    "value": "SE"
   },
   {
-    "text": "Sweden", 
-    "id": "SE"
+    "label": "Switzerland", 
+    "value": "CH"
   },
   {
-    "text": "Switzerland", 
-    "id": "CH"
+    "label": "Ukraine", 
+    "value": "UA"
   },
   {
-    "text": "Ukraine", 
-    "id": "UA"
+    "label": "United Arab Emirates", 
+    "value": "AE"
   },
   {
-    "text": "United Arab Emirates", 
-    "id": "AE"
+    "label": "United Kingdom", 
+    "value": "UK"
   },
   {
-    "text": "United Kingdom", 
-    "id": "UK"
-  },
-  {
-    "text": "USA", 
-    "id": "US"
+    "label": "USA", 
+    "value": "US"
   }
-]
+        ]
