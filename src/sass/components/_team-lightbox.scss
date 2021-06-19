@@ -1,5 +1,6 @@
 .basicLightbox {
   overflow: scroll;
+  backdrop-filter: blur(3px);
 }
 
 .team-wrapper {
@@ -127,10 +128,3 @@
     transform: scale(1.1);
   }
 }
-// .close-icon {
-//   fill: $title-text-color;
-//   &:hover {
-//     fill: $btn-modal;
-//     transform: scale(1.5);
-//   }
-// }
