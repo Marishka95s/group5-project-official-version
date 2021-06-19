@@ -105,3 +105,32 @@
   color: rgb(245, 242, 242);
   cursor: pointer;
 }
+
+.lightbox__button {
+  display: flex;
+  position: absolute;
+  top: -40px;
+  right: -50px;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  border: 1px solid $title-text-color;
+  border-radius: 50%;
+  background-color: $bg-color;
+  fill: $title-text-color;
+  &:hover {
+    border: 1px solid $btn-modal;
+    background-color: $title-text-color;
+    fill: $btn-modal;
+    transform: scale(1.1);
+  }
+}
+// .close-icon {
+//   fill: $title-text-color;
+//   &:hover {
+//     fill: $btn-modal;
+//     transform: scale(1.5);
+//   }
+// }

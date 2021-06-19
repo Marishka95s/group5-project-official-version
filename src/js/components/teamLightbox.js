@@ -90,9 +90,14 @@ const markup = `<div class="team-wrapper"><div class="team-card">
     <a href="https://github.com/Sergey-Sidorchuk" target="_blank" class="team-git"><svg class="logo__icon" width="24" height="24">
       <use href="${spriteUrl}#github"></use>
     </svg></a>
-</div></div>`;
+</div>
+<button type="button" class="lightbox__button" data-action="close-lightbox" aria-label="close-button">
+  <svg class="close-icon" width="12px" height="12px">
+    <use href="${spriteUrl}#icon-close"></use>
+  </svg>
+</button>
+</div>`;
 const container = document.querySelector('.js-team-modal');
-
 container.addEventListener('click', openModal);
 
 const modal = basicLightbox.create(markup);
@@ -101,12 +106,14 @@ function openModal(e) {
   modal.show();
 
   window.addEventListener('keydown', closeModalHandler);
+  const closeBtn = document.querySelector('.lightbox__button');
 
+  closeBtn.addEventListener('click', closeModalHandler);
   function closeModalHandler(e) {
     if (e.code === 'Escape') {
       modal.close();
       window.removeEventListener('keydown', closeModalHandler);
     }
+    modal.close();
   }
 }
-//
