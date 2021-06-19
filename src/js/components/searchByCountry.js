@@ -19,13 +19,12 @@ inner.addEventListener('change', () => {
     });
     
     cntrySrch.countryCode = countryValue;
-    console.log(cntrySrch.countryCode);
     fetchEvents()
 })
 
 function fetchEvents() {
-    cntrySrch.fetchQuery().then(card => {
-        eventContainer.insertAdjacentHTML('beforeend', eventTpl(card))
+    cntrySrch.fetchQuery().then(data => {
+        eventContainer.insertAdjacentHTML('beforeend', eventTpl(data))
 
     })
 }
