@@ -30,7 +30,7 @@ export default class ApiService {
 
             })
             .then((data) => {
-                this.page += 1; // left for pagination, if it is needed
+                //this.page += 1; // left for pagination, if it is needed
                 const { page = {} } = data;
                 const { totalElements = 0 } = page;
                 console.log('20/21 events full RESPONCE ==>', data);////////////////////////////////////////////////////
@@ -40,9 +40,13 @@ export default class ApiService {
                 throw new Error('===Events were not found at all! Try another querry===');
                 
             })
-            .then(({ _embedded }) => {
-                const eventsArr = _embedded.events;
+            .then((data) => {
+                const eventsArr = data._embedded.events;
                 
+                const currentPageNumber = data.page.number;
+                const totalPages = data.page.totalPages;
+
+                    
                  
                 const cardsArr = eventsArr.map(
                     (element) => {
@@ -61,8 +65,8 @@ export default class ApiService {
                         const eventVenue = venues[0].name;
 
                         const card = {
-                            id: element.id,  //on rendering "card.element" please put: data-value="${id}",
-                            //for ex. <li class="item" data-value="${id}">...</li>
+                            id: element.id,  //on rendering "card.element" please put: data-value="{{id}}",
+                            //for ex. <li class="item" data-value="{{id}}">...</li>
                             //on click we will get "id" for query: id = event.target.dataset.value
                             imgUrl: url,
                             imgAlt: `Image of '${element.name}'`,
@@ -70,6 +74,8 @@ export default class ApiService {
                             date: localDate,
                             emb: venues,
                             venue: eventVenue,
+                            number: currentPageNumber,
+                            totalPages: totalPages,
                         };
                         
                         return card;
@@ -89,16 +95,21 @@ export default class ApiService {
         this.page = 0;
     }
 
-    get cardsArray() {
-        return this.cardsArr;
-    }
-
     get query() {
         return this.searchQuery;
     }
 
     set query(newQuery) {
         this.searchQuery = newQuery;
+    }
+
+
+    get country() {
+        return this.countryCode;
+    }
+
+    set country(newCountryCode) {
+        this.countryCode = newCountryCode;
     }
 
 }

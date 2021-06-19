@@ -28,7 +28,8 @@ function onSearch(event) {
 
 function fetchEvents() {
     API.fetchQuery().then(card => {
-        eventContainer.insertAdjacentHTML('beforeend', eventTpl(card))
+
+        eventContainer.insertAdjacentHTML('beforeend', eventTpl(card));
         
-    })
+    }).catch(error => alert(error))///////////////////// Jack: code line "catch" was added to catch an error
 }
