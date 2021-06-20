@@ -4,6 +4,7 @@ import cardsEl from '../templates/cards.hbs';
 import ApiServiceOneEvent from './components/apiServiceOneEvent.js';
 import footer from './components/footer.js';
 import select from './components/select.js';
+import modal from './components/modal.js';
 import input from './components/searchInput.js';
 import searchByCountry from './components/searchByCountry.js';
 import eventTpl from '../templates/eventTpl.hbs';

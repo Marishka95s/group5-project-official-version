@@ -4,7 +4,21 @@ const KEY = 'apikey=oWB2vgl24g0TKHnvwppl4WSJqkARKGcC'
 export default class ApiServiceOne {
     // https://app.ticketmaster.com/discovery/v2/events/G5diZfkn0B-bh.json?apikey={apikey}
     constructor() {
-        this.eventQuery = 'G5vYZ4VqWuxjo';  // G5vjZpNlLC7Ix - sports
+       
+        this.id = ''; // unneccessary info
+        this.event= ''; // unneccessary info
+        this.imgUrl= '';
+        this.imgAlt= '';
+        this.info= '';// INFO  divided with <br> each statement starts from new line
+        this.data= ''; // WHEN
+        this.time= ''; // WHEN
+        this.timezone= ''; // WHEN
+        this.city= ''; // WHERE
+        this.country= ''; // WHERE
+        this.attraction= ''; // WHO in array
+        this.price= '';
+        this.link= ''; // href for button "BUY TICKETS"
+        this.moreFromThisAuthor= '';
     }
 
     fetchQuery() {
@@ -79,7 +93,7 @@ export default class ApiServiceOne {
     }
 
     get eventId() {
-        return this.countryCode;
+        return this.event.eventQuery;
     }
 
     set eventId(newEventId) {

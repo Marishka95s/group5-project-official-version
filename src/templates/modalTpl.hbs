@@ -1,4 +1,58 @@
 {{!-- {{#each this}}
+<div class="lightbox" data-value="${id}">
+    <div class="modal">
+        <button class="btn_close">
+            <svg class="icon-close">
+                <use href="../images/sprite.svg#icon-close"></use>
+            </svg>
+        </button>
+        <img class="modalEvent__image--round" src="{{imgUrl}}" alt="{{imgAlt}}" />
+        <div class="modalEvent__content">
+            <img class="modalEvent__image--cube" src="{{modalCard.imgUrl}}" alt="{{modalCard.imgAlt}}" />
+            <div class="modalEvent__info">
+                <h3 class="info__name">INFO</h3>
+                <p class="modalEvent__info">{{event}}</p>
+
+                <h3 class="info__name">WHEN</h3>
+                <p class="modalEvent__date">{{date}}</p>
+                <p class="modalEvent__time">{{time}}</p>
+                <p class="modalEvent__city">{{city}}</p>
+                <p class="modalEvent__country">{{country}}</p>
+
+                <h3 class="info__name">WHERE</h3>
+                <p class="modalEvent__city">{{city}}</p>
+                <p class="modalEvent__country">{{country}}</p>
+                <p class="modalEvent__place">{{place}}</p>
+
+                <h3 class="info__name">WHO</h3>
+                <p class="modalEvent__artist">{{artist}}</p>
+
+                <h3 class="info__name">PRICES</h3>
+                <p class="modalEvent__standart">
+                    <svg class="modalEvent__icon" aria-label="Barcode icon">
+                        <use class="icon-nav" href="../images/sprite.svg#icon-code"></use>
+                    </svg>
+                    Standart {{priceRangers.min}} UAH
+                </p>
+                <a href="/" class="buyTickets__button">BUY TICKETS</a>
+
+                <p class="modalEvent__vip">
+                    <svg class="modalEvent__icon" aria-label="Barcode icon">
+                        <use class="icon-nav" href="../images/sprite.svg#icon-code"></use>
+                    </svg>
+                    VIP {{priceRangers.max}} UAH
+                </p>
+                <a href="/" class="buyTickets__button">BUY TICKETS</a>
+            </div>
+        </div>
+        const modalCard = {
+        <a href="{{moreFromThisAuthor}}" class="moreInfo__button">MORE FROM THIS AUTHOR</a>
+    </div>
+</div>
+{{/each}} --}}
+
+
+{{!-- {{#each this}}
 <div class="lightbox">
     <div class="modal">
         <button class="btn_close">
