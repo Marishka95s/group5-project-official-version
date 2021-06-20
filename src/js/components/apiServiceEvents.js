@@ -6,7 +6,7 @@ export default class ApiService {
     constructor() {
         this.searchQuery = '';
         this.countryCode = 'US'; // default US... need to think about it
-        this.page = 0; // !!!STARTS from 0;   left for pagination, if it is needed   
+        this.page = 1; // !!!STARTS from 0;   left for pagination, if it is needed   
 
         //get with width of browser window in pixels: document.documentElement.clientWidth;
         this.size = (document.documentElement.clientWidth > 1279) ? 'size=20' : 'size=21'; // quantity of cards per 1 page
@@ -41,8 +41,7 @@ export default class ApiService {
                 
             })
             .then((data) => {
-                const eventsArr = data._embedded.events;
-                
+                const eventsArr = data._embedded.events;                
                 const currentPageNumber = data.page.number;
                 const totalPages = data.page.totalPages;
 
@@ -87,7 +86,15 @@ export default class ApiService {
 
 
     }
-
+async getEvent() {
+        const url = `${BASE_URL}?keyword=${this.searchQuery}&countryCode=${this.countryCode}&page=${this.page}&${this.size}&${KEY}`;
+            
+		const res = await fetch(url);
+		if (!res.ok) {
+			throw res;
+		}
+		this.query = await res.json();
+	}
     
 
     // left for pagination, if it is needed
