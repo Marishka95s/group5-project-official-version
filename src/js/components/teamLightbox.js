@@ -11,11 +11,7 @@ import IevgenUrl from '../../images/team/Ievgen.jpg';
 import SergeySidorchukUrl from '../../images/team/Sergey.jpg';
 import spriteUrl from '../../images/sprite.svg';
 
-const markup = `<button type="button" class="lightbox__button" data-action="close-lightbox">
-    <svg class="event__icon" aria-label="Navigation map point">
-      <use class="icon-close" href="sprite.5ec50489.svg#icon-close"></use>
-    </svg>
-    </button><div class="team-wrapper"><div class="team-card">
+const markup = `<div class="team-wrapper"><div class="team-card">
     <img src="${MariaUrl}" alt="Mariia" class="team-image">
     <p class="team-name">Mariia</p>
     <p class="team-role">Team Lead</p>
