@@ -3,7 +3,6 @@ var debounce = require('lodash.debounce');
 // Templates
 import '../templates/cards.hbs';
 import '../templates/eventTpl.hbs';
-import '../templates/modalTpl.hbs';
 
 // Component
 import ApiServiceOneEvent from './components/apiServiceEvents.js';

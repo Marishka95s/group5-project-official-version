@@ -4,7 +4,7 @@ const KEY = 'apikey=oWB2vgl24g0TKHnvwppl4WSJqkARKGcC'
 export default class ApiServiceModal {
     // https://app.ticketmaster.com/discovery/v2/events/G5diZfkn0B-bh.json?apikey={apikey}
     constructor() {
-        this.id = id;  // G5vjZpNlLC7Ix - sports
+        this.id = '';  // G5vjZpNlLC7Ix - sports
     }
 
     fetchQuery() {
@@ -68,8 +68,9 @@ export default class ApiServiceModal {
                     price: priceArrayOfObjects,
                     link: event.url, // href for button "BUY TICKETS"
                     moreFromThisAuthor: event._embedded.attractions[0].url,  // href for button "moreFromThisAuthor"
+                    venue: event._embedded.venues[0].name,
                 };
-                console.log('modalCard for render ==>', modalCard);////////////////////////////////////////////////////
+                // console.log('modalCard for render ==>', modalCard);////////////////////////////////////////////////////
                 return modalCard;
             });
 
@@ -77,11 +78,11 @@ export default class ApiServiceModal {
     }
 
     get eventId() {
-        return this.countryCode;
+        return this.id;
     }
 
     set eventId(newEventId) {
-        this.countryCode = newEventId;
+        this.id = newEventId;
     }
 
 }

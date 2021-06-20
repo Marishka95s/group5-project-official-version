@@ -68,7 +68,8 @@ export default class ApiServiceOne {
                     price: priceArrayOfObjects,
                     link: event.url, // href for button "BUY TICKETS"
                     moreFromThisAuthor: event._embedded.attractions[0].url,  // href for button "moreFromThisAuthor"
-                    
+                    venue: event._embedded.venues[0].name,
+
 
                 };
                 console.log('modalCard for render ==>', modalCard);////////////////////////////////////////////////////
