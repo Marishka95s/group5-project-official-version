@@ -1,8 +1,8 @@
 const element = document.querySelector('.pagination-list');
-let totalPages = 20; // total pages need to be get from API, when totalPages<6 where are problems
+let totalPages = 20; // total pages need to be get from API
 let page = 1; // active page we start from
 
-
+// initial pagination render
 element.innerHTML = createPagination(totalPages, page);
 
 if (totalPages != 1) { // for single page do not show pagination at all
