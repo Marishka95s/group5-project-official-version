@@ -1,7 +1,7 @@
 .header {
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url("../images/hero/mobile_background@1x.jpg");
+  background-image: url('../images/hero/mobile_background@1x.jpg');
   background-size: 100%;
 
   @media screen and (min-device-pixel-ratio: 2),
@@ -37,38 +37,38 @@
       background-image: url('../images/hero/tablet_background@3x.jpg');
     }
   }
-     
+
   @media screen and (min-width: 1280px) {
-    background-image: url("../images/hero/desktop_background@1x.jpg");
+    background-image: url('../images/hero/desktop_background@1x.jpg');
 
     @media screen and (min-device-pixel-ratio: 2),
       screen and (-o-min-device-pixel-ratio: 2/1),
       screen and (-webkit-min-device-pixel-ratio: 2),
       screen and (min-resolution: 192dpi),
       screen and (min-resolution: 2dppx) {
-      background-image: url("../images/hero/desktop_background@2x.jpg");
-      }
-      @media screen and (min-device-pixel-ratio: 3),
+      background-image: url('../images/hero/desktop_background@2x.jpg');
+    }
+    @media screen and (min-device-pixel-ratio: 3),
       screen and (-o-min-device-pixel-ratio: 3/1),
       screen and (-webkit-min-device-pixel-ratio: 3),
       screen and (min-resolution: 288dpi),
       screen and (min-resolution: 3dppx) {
-          background-image: url("../images/hero/desktop_background@3x.jpg");
-      }
+      background-image: url('../images/hero/desktop_background@3x.jpg');
+    }
   }
-  }
+}
 
 .header-components {
   padding-top: 78px;
   padding-bottom: 112px;
 
-    @media screen and (min-width: 768px) {
-        padding-top: 40px;
-        padding-bottom: 183px;
-    }
-    @media screen and (min-width: 1280px) {
-        padding-bottom: 192px;
-    }
+  @media screen and (min-width: 768px) {
+    padding-top: 40px;
+    padding-bottom: 183px;
+  }
+  @media screen and (min-width: 1280px) {
+    padding-bottom: 192px;
+  }
 }
 .header-title {
   color: #dc56c5;
@@ -131,13 +131,47 @@
     margin-left: -60px;
   }
 }
+.input__label {
+  position: relative;
+}
 .input {
-  width: 270px;
-  height: 40px;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(20px);
+  width: 270px;
+  height: 40px;
   border-radius: 20px;
   border: none;
+  padding: 10px 30px;
+  color: #cccccc;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  height: 40px;
+}
+.input__icon {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  bottom: 14px;
+  right: 44px;
+}
+// .input::after {
+//   content: '';
+//   position: absolute;
+//   top: 50%;
+//   right: 30px;
+//   transform: translateY(-50%);
+//   display: block;
+//   width: 12px;
+//   height: 12px;
+//   background: url('../images/sprite.svg#icon-search') no-repeat;
+// }
+.input:hover,
+.input:focus,
+.choices:hover,
+.choices:focus {
+  outline: none;
+  box-shadow: 0 0 3px 3px $title-text-color;
 }
 .search-input {
   margin-bottom: 25px;
@@ -161,11 +195,11 @@
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   &::-webkit-scrollbar {
-    width: 10px;
+    width: 3px;
   }
   &::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background-color: #fff;
+    border-radius: 20px;
+    background-color: #dc56c5;
   }
   &::-webkit-scrollbar-track {
     background-color: #5f5f5f;
@@ -245,16 +279,6 @@
   top: 8px;
 }
 
-// .is-open .choices__list--dropdown::before {
-//   position: absolute;
-//   top: -1px;
-//   left: 23px;
-//   content: '';
-//   width: 225px;
-//   height: 2px;
-//   // background-color: red;
-//   background-color: #939393;
-// }
-.choices__item[data-id='4'] {
+.choices__item[data-id='8'] {
   display: none;
 }

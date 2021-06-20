@@ -1,6 +1,6 @@
-.pagination {
-  padding-top: 60px;
-}
+// .pagination {
+//   padding-top: 60px;
+// }
 .pagination-list {
   display: flex;
   align-items: center;
@@ -8,17 +8,31 @@
   //width: 300px;
   position: relative;
 }
+
+.pagination-list .btn-prev,
 .pagination-list .btn-next {
-  //margin-left: 10px; for common positionning
   position: absolute;
-  transform: translateX(125px);
   left: 50%;
 }
 
-.pagination-list .btn-prev {
-  position: absolute;
-  transform: translateX(-160px);
-  left: 50%;
+@media screen and (max-width: 350px) {
+  .pagination-list .btn-next {
+    transform: translateX(13px) translateY(40px);
+  }
+
+  .pagination-list .btn-prev {
+    transform: translateX(-55px) translateY(40px);
+  }
+}
+
+@media screen and (min-width: 351px) {
+  .pagination-list .btn-next {
+    transform: translateX(125px);
+  }
+
+  .pagination-list .btn-prev {
+    transform: translateX(-160px);
+  }
 }
 
 .pagination-item {
@@ -37,7 +51,7 @@
   color: $primary-text-color;
   border: none;
   margin-right: 5px;
-  & li:hover {
+  &:hover {
     color: $title-text-color;
     // border: 1px solid $title-text-color;
     // border-radius: 10px 0px;

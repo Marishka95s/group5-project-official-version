@@ -1,39 +1,52 @@
 {{!-- {{#each this}}
-    <img class="modalEvent__image--round" src="{{}}" alt="{{}}"/>
-    <img class="modalEvent__image--cube" src="{{}}" alt="{{}}"/>
-    <div class="modalEvent__info">
-        <h3 class="info__name">INFO</h3>                
-        <p class="modalEvent__info">{{}}</p>
-
-        <h3 class="info__name">WHEN</h3> 
-        <p class="modalEvent__date">{{}}</p>
-        <p class="modalEvent__time">{{}}</p>
-        <p class="modalEvent__city">{{}}</p>
-        <p class="modalEvent__country">{{}}</p>
-
-        <h3 class="info__name">WHERE</h3>                       
-        <p class="modalEvent__city">{{}}</p>
-        <p class="modalEvent__country">{{}}</p>
-        <p class="modalEvent__place">{{}}</p>                
-
-        <h3 class="info__name">WHO</h3>                
-        <p class="modalEvent__artist">{{}}</p>
-
-        <h3 class="info__name">PRICES</h3>                
-        <p class="modalEvent__standart"> 
-            <svg class="modalEvent__icon" aria-label="Barcode icon">
-                <use class="icon-nav" href="./images/sprite.svg#icon-ticketCode"></use>
+<div class="lightbox">
+    <div class="modal">
+        <button class="btn_close">
+            <svg class="icon-close">
+                <use href="../images/sprite.svg#icon-close"></use>
             </svg>
-            Standart {{}} UAH
-        </p>
-        <a href="/">BUY TICKETS</a>
+        </button>
+        <img class="modalEvent__image--round" src="{{}}" alt="{{}}" />
+        <div class="modalEvent__content">
+            <img class="modalEvent__image--cube" src="{{}}" alt="{{}}" />
+            <div class="modalEvent__info">
+                <h3 class="info__name">INFO</h3>
+                <p class="modalEvent__info">{{}}</p>
 
-         <p class="modalEvent__vip"> 
-            <svg class="modalEvent__icon" aria-label="Barcode icon">
-                <use class="icon-nav" href="./images/sprite.svg#icon-ticketCode"></use>
-            </svg>
-            VIP {{}} UAH
-        </p>
-        <a href="/">BUY TICKETS</a>
+                <h3 class="info__name">WHEN</h3>
+                <p class="modalEvent__date">{{}}</p>
+                <p class="modalEvent__time">{{}}</p>
+                <p class="modalEvent__city">{{}}</p>
+                <p class="modalEvent__country">{{}}</p>
+
+                <h3 class="info__name">WHERE</h3>
+                <p class="modalEvent__city">{{}}</p>
+                <p class="modalEvent__country">{{}}</p>
+                <p class="modalEvent__place">{{}}</p>
+
+                <h3 class="info__name">WHO</h3>
+                <p class="modalEvent__artist">{{}}</p>
+
+                <h3 class="info__name">PRICES</h3>
+                <p class="modalEvent__standart">
+                    <svg class="modalEvent__icon" aria-label="Barcode icon">
+                        <use class="icon-nav" href="../images/sprite.svg#icon-code"></use>
+                    </svg>
+                    Standart {{}} UAH
+                </p>
+                <a href="/" class="buyTickets__button">BUY TICKETS</a>
+
+                <p class="modalEvent__vip">
+                    <svg class="modalEvent__icon" aria-label="Barcode icon">
+                        <use class="icon-nav" href="../images/sprite.svg#icon-code"></use>
+                    </svg>
+                    VIP {{}} UAH
+                </p>
+                <a href="/" class="buyTickets__button">BUY TICKETS</a>
+            </div>
+        </div>
+        <a href="{{}}" class="moreInfo__button">MORE FROM THIS AUTHOR</a>
     </div>
-{{/each}} --}}
+</div>
+{{/each}}
+ --}}

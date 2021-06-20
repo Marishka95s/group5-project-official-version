@@ -77,4 +77,12 @@ export default class ApiService {
 
     }
 
+    get eventId() {
+        return this.countryCode;
+    }
+
+    set eventId(newEventId) {
+        this.countryCode = newEventId;
+    }
+
 }
