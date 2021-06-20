@@ -22,8 +22,8 @@ import '../../node_modules/basiclightbox/dist/basicLightbox.min.css';
 
 // this block starts test EMPTY querry request for USA
 // the result is an Array of Objects => see console log
-const apiEvents = new ApiServiceEvents();
+const apiEvents = new ApiServiceOneEvent();
 apiEvents
   .fetchQuery()
-  .then(console.log)
+  .then(console.log('Fetch with defaults'))
   .catch(error => alert(error));
