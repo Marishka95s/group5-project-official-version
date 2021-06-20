@@ -1,7 +1,7 @@
 const BASE_URL = 'https://app.ticketmaster.com/discovery/v2/events';
 const KEY = 'apikey=oWB2vgl24g0TKHnvwppl4WSJqkARKGcC'
 
-export default class ApiService {
+export default class ApiServiceOne {
     // https://app.ticketmaster.com/discovery/v2/events/G5diZfkn0B-bh.json?apikey={apikey}
     constructor() {
         this.eventQuery = 'G5vYZ4VqWuxjo';  // G5vjZpNlLC7Ix - sports
@@ -24,10 +24,11 @@ export default class ApiService {
 
             })
             .then((data) => {
-                console.log('ONE event Responce ==>', data);////////////////////////////////////////////////////
-                if (data.id === this.eventQuery) {
+                console.log('ONE event FULL Responce ==>', data);////////////////////////////////////////////////////
+                if ( (data) && (data.id === this.eventQuery)) {
                     return data;
                 }
+                
                 throw new Error('===Event details were not found! ¯ \ _ (ツ) _ / ¯===');
                 
             })
@@ -75,6 +76,14 @@ export default class ApiService {
             });
 
 
+    }
+
+    get eventId() {
+        return this.countryCode;
+    }
+
+    set eventId(newEventId) {
+        this.countryCode = newEventId;
     }
 
 }

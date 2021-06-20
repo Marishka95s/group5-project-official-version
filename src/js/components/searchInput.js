@@ -5,7 +5,7 @@ import error from './error';
 const debounce = require('lodash.debounce');
 
 const API = new Api();
-
+API.query.toLowerCase();
 const eventContainer = document.querySelector('.gallery_list');
 const input = document.querySelector('.search-input');
 input.addEventListener('input', debounce(onSearch, 500));
@@ -13,7 +13,7 @@ input.addEventListener('input', debounce(onSearch, 500));
 
 
 function onSearch(event) {
-    API.query = event.target.value.trim();
+    API.query = event.target.value.toLowerCase().trim();
 
     console.log(API.query);
 
@@ -28,7 +28,8 @@ function onSearch(event) {
 
 function fetchEvents() {
     API.fetchQuery().then(card => {
-        eventContainer.insertAdjacentHTML('beforeend', eventTpl(card))
 
-    })
+        eventContainer.insertAdjacentHTML('beforeend', eventTpl(card));
+        
+    }).catch(error => alert(error))///////////////////// Jack: code line "catch" was added to catch an error
 }
