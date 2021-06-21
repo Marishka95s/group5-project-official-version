@@ -1,14 +1,14 @@
-const BASE_URL = 'https://app.ticketmaster.com/discovery/v2/events';
+const BASE_URL = 'https://app.ticketmaster.com/discovery/v2/events'; 
 const KEY = 'apikey=oWB2vgl24g0TKHnvwppl4WSJqkARKGcC'
 
-export default class ApiServiceOne {
+export default class ApiServiceModal {
     // https://app.ticketmaster.com/discovery/v2/events/G5diZfkn0B-bh.json?apikey={apikey}
     constructor() {
-        this.eventQuery = 'G5vYZ4VqWuxjo';  // G5vjZpNlLC7Ix - sports
+        this.id = '';  // G5vjZpNlLC7Ix - sports
     }
 
     fetchQuery() {
-        const url = `${BASE_URL}/${this.eventQuery}?${KEY}`;
+        const url = `${BASE_URL}/${this.id}?${KEY}`;
         
         const options = {
             method: 'GET', //it goes by default anyway - was done for some unexpected "options" just in case)
@@ -24,8 +24,8 @@ export default class ApiServiceOne {
 
             })
             .then((data) => {
-                //console.log('ONE event FULL Responce ==>', data);////////////////////////////////////////////////////
-                if ( (data) && (data.id === this.eventQuery)) {
+                // console.log('ONE event FULL Responce ==>', data);////////////////////////////////////////////////////
+                if ( (data) && (data.id === this.id)) {
                     return data;
                 }
                 
@@ -70,7 +70,7 @@ export default class ApiServiceOne {
                     moreFromThisAuthor: event._embedded.attractions[0].url,  // href for button "moreFromThisAuthor"
                     venue: event._embedded.venues[0].name,
                 };
-                //console.log('modalCard for render ==>', modalCard);////////////////////////////////////////////////////
+                // console.log('modalCard for render ==>', modalCard);////////////////////////////////////////////////////
                 return modalCard;
             });
 
