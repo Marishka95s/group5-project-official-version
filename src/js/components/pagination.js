@@ -50,7 +50,7 @@ export default class Pagination {
 
         liTag += `<li class="pagination-item first numb" ><span>1</span></li>`;  //onclick="createPagination(totalPages, 1)"
             if (this.page >= 4) { //если текущая страница больше 3, добавляем ... после 1
-            liTag += `<li class="pagination-item dots"><span>...</span></li>`;
+            liTag += `<li class="pagination-item dots js-lower"><span class="js-lower">...</span></li>`;
             }
 
      }
