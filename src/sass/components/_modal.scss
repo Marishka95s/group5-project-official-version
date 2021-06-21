@@ -7,12 +7,13 @@
   display: block;
   align-items: center;
   justify-content: center;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   opacity: 0;
+  background: rgba(32, 13, 29, 0.6);
   pointer-events: none;
   transition: opacity var(--animation-duration) var(--timing-function);
 
@@ -30,12 +31,21 @@
     border-radius: 150px 0;
     padding-right: 17px;
     padding-left: 13px;
-    position: relative;
+    position: sticky;
     line-height: 0.8;
-    height: 831px;
-    width: 535px;
-  // background: rgba(32, 13, 29, 0.6);
-    // padding-top: 10px;
+    height: 915px;
+    width: 272px;
+    top: 414px;
+    @media screen and (min-width: 768px) {
+      top: 161px;
+      height: 831px;
+      width: 595px;
+    }
+    @media screen and (min-width: 1280px) {
+      top: 201px;
+      height: 1023px;
+      width: 942px;
+    }
 }
 
 .lightbox__content {
@@ -48,7 +58,7 @@
   transform: scale(1);
 }
 
-.lightbox__button {
+.lightbox__button1 {
   position: absolute;
   top: 8px;
   right: 8px;
