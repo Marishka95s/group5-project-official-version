@@ -24,7 +24,7 @@ export default class ApiServiceOne {
 
             })
             .then((data) => {
-                console.log('ONE event FULL Responce ==>', data);////////////////////////////////////////////////////
+                //console.log('ONE event FULL Responce ==>', data);////////////////////////////////////////////////////
                 if ( (data) && (data.id === this.eventQuery)) {
                     return data;
                 }
@@ -69,10 +69,8 @@ export default class ApiServiceOne {
                     link: event.url, // href for button "BUY TICKETS"
                     moreFromThisAuthor: event._embedded.attractions[0].url,  // href for button "moreFromThisAuthor"
                     venue: event._embedded.venues[0].name,
-
-
                 };
-                console.log('modalCard for render ==>', modalCard);////////////////////////////////////////////////////
+                //console.log('modalCard for render ==>', modalCard);////////////////////////////////////////////////////
                 return modalCard;
             });
 
@@ -80,11 +78,11 @@ export default class ApiServiceOne {
     }
 
     get eventId() {
-        return this.countryCode;
+        return this.id;
     }
 
     set eventId(newEventId) {
-        this.countryCode = newEventId;
+        this.id = newEventId;
     }
 
 }
