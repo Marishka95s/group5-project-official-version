@@ -1,4 +1,4 @@
-{{!-- {{#each this}}
+{{#each this}}
 <div class="lightbox">
     <div class="modal">
         <button class="btn_close">
@@ -6,47 +6,42 @@
                 <use href="../images/sprite.svg#icon-close"></use>
             </svg>
         </button>
-        <img class="modalEvent__image--round" src="{{}}" alt="{{}}" />
+        <img class="modalEvent__image--round" src="{{imgUrl}}" alt="{{imgAlt}}" />
         <div class="modalEvent__content">
-            <img class="modalEvent__image--cube" src="{{}}" alt="{{}}" />
+            <img class="modalEvent__image--cube" src="{{imgUrl}}" alt="{{imgAlt}}" />
             <div class="modalEvent__info">
                 <h3 class="info__name">INFO</h3>
-                <p class="modalEvent__info">{{}}</p>
+                <p class="modalEvent__info">{{info}}</p>
 
                 <h3 class="info__name">WHEN</h3>
-                <p class="modalEvent__date">{{}}</p>
-                <p class="modalEvent__time">{{}}</p>
-                <p class="modalEvent__city">{{}}</p>
-                <p class="modalEvent__country">{{}}</p>
+                <p class="modalEvent__date">{{date}}</p>
+                <p class="modalEvent__time">{{time}}</p>
+                <p class="modalEvent__city">{{city}}</p>
+                <p class="modalEvent__country">{{country}}</p>
 
                 <h3 class="info__name">WHERE</h3>
-                <p class="modalEvent__city">{{}}</p>
-                <p class="modalEvent__country">{{}}</p>
-                <p class="modalEvent__place">{{}}</p>
+                <p class="modalEvent__city">{{city}}</p>
+                <p class="modalEvent__country">{{country}}</p>
+                <p class="modalEvent__place">{{venue}}</p>
 
                 <h3 class="info__name">WHO</h3>
-                <p class="modalEvent__artist">{{}}</p>
-
+                {{#each this}}
+                <p class="modalEvent__artist">{{attractions}}</p>
+                {{/each}}
                 <h3 class="info__name">PRICES</h3>
-                <p class="modalEvent__standart">
+                {{#each this}}
+                <p class="modalEvent__{{price.type}}">
                     <svg class="modalEvent__icon" aria-label="Barcode icon">
                         <use class="icon-nav" href="../images/sprite.svg#icon-code"></use>
                     </svg>
-                    Standart {{}} UAH
+                     {{price.type}} {{price.min}}-{{price.max}} {{price.currency}}
                 </p>
-                <a href="/" class="buyTickets__button">BUY TICKETS</a>
-
-                <p class="modalEvent__vip">
-                    <svg class="modalEvent__icon" aria-label="Barcode icon">
-                        <use class="icon-nav" href="../images/sprite.svg#icon-code"></use>
-                    </svg>
-                    VIP {{}} UAH
-                </p>
-                <a href="/" class="buyTickets__button">BUY TICKETS</a>
+                {{!-- <a href="{{link}}" class="buyTickets__button">BUY TICKETS</a> --}}
+                {{/each}}
             </div>
         </div>
-        <a href="{{}}" class="moreInfo__button">MORE FROM THIS AUTHOR</a>
+        <a href="{{moreFromThisAuthor}}" class="moreInfo__button">MORE FROM THIS AUTHOR</a>
     </div>
 </div>
 {{/each}}
- --}}
+

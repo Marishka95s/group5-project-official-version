@@ -40,14 +40,6 @@
   transform: scale(1);
 }
 
-.lightbox__image {
-  display: block;
-  width: auto;
-  height: auto;
-  max-height: 100vh;
-  max-width: 100vw;
-}
-
 .lightbox__button {
   position: absolute;
   top: 8px;
@@ -76,7 +68,6 @@
 .lightbox__button:focus {
   background-color: rgba(0, 0, 0, 0.5);
 }
-
 
 // .lightbox {
 //   display: none;
@@ -282,4 +273,3 @@
 //     }
 //   }
 // }
-
