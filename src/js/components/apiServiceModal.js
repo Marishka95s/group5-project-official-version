@@ -24,7 +24,7 @@ export default class ApiServiceModal {
 
             })
             .then((data) => {
-                console.log('ONE event FULL Responce ==>', data);////////////////////////////////////////////////////
+                // console.log('ONE event FULL Responce ==>', data);////////////////////////////////////////////////////
                 if ( (data) && (data.id === this.id)) {
                     return data;
                 }

@@ -1,5 +1,7 @@
-{{#each this}}
-<div class="lightbox">
+<div class="lightbox__overlay"></div>
+
+<div class="lightbox__content">
+  <div class="lightbox">
     <div class="modal">
         <button class="btn_close">
             <svg class="icon-close">
@@ -25,23 +27,26 @@
                 <p class="modalEvent__place">{{venue}}</p>
 
                 <h3 class="info__name">WHO</h3>
-                {{#each this}}
-                <p class="modalEvent__artist">{{attractions}}</p>
+                {{#each this.attractions}}
+                    <p class="modalEvent__artist">{{this}}</p>
                 {{/each}}
                 <h3 class="info__name">PRICES</h3>
-                {{#each this}}
-                <p class="modalEvent__{{price.type}}">
-                    <svg class="modalEvent__icon" aria-label="Barcode icon">
-                        <use class="icon-nav" href="../images/sprite.svg#icon-code"></use>
-                    </svg>
-                     {{price.type}} {{price.min}}-{{price.max}} {{price.currency}}
-                </p>
+                {{#each this.price}}
+                    <p class="modalEvent__{{this.type}}">
+                        <svg class="modalEvent__icon" aria-label="Barcode icon">
+                            <use class="icon-nav" href="../images/sprite.svg#icon-code"></use>
+                        </svg>
+                        {{this.type}} {{this.min}}-{{this.max}} {{this.currency}}
+                    </p>
                 {{!-- <a href="{{link}}" class="buyTickets__button">BUY TICKETS</a> --}}
                 {{/each}}
             </div>
         </div>
         <a href="{{moreFromThisAuthor}}" class="moreInfo__button">MORE FROM THIS AUTHOR</a>
     </div>
-</div>
-{{/each}}
+  </div>
+ </div>
+
+
+
 

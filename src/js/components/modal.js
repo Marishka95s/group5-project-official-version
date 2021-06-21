@@ -1,33 +1,36 @@
 import ApiServiceModal from './apiServiceModal.js';
 import modalTpl from '../../templates/modalTpl.hbs';
-// import ApiServiceModal1 from './apiServiceOneEvent.js';
+
 const galleryContainer = document.querySelector('.gallery_list');
-const modalLightbox = document.querySelector('.lightbox__content');
+const modalLightbox = document.querySelector('.js-lightbox');
 const closeModalBtn = document.querySelector('.lightbox__button');
 const lightboxOverlay = document.querySelector('.lightbox__overlay');
+// const modalContent = document.querySelector('.lightbox__content');
 // Modal components
 
 galleryContainer.addEventListener('click', onGalleryContainerClick);
 let currentSlide = null;
-let necessaryId = null;
+
 
 function onGalleryContainerClick(evt) {
     if (!evt.target.classList.contains('event_img') && !evt.target.classList.contains('event__info')) { return };
     console.log(evt.target)
 
     currentSlide = evt.target;
-    necessaryId = currentSlide.parentNode.dataset.value;
+    let necessaryId = currentSlide.parentNode.dataset.value;
     console.log(currentSlide.parentNode);
     console.log(necessaryId);
 
     const apiEvents = new ApiServiceModal(necessaryId);
     apiEvents.eventId = necessaryId;
-    apiEvents.fetchQuery()
-            
+    apiEvents.fetchQuery()            
         .then(data => {
-            const data1 = modalTpl({  });
-            console.log(`Data1, ${data}`)
-            modalLightbox.insertAdjacentHTML('beforeend', data1);
+            const { id, imgUrl, imgAlt, info, date, time, timezone, city, country, attractions, price, link, moreFromThisAuthor, venue } = data;
+            const data1 = modalTpl({ id, imgUrl, imgAlt, info, date, time, timezone, city, country, attractions, price, link, moreFromThisAuthor, venue });
+            console.dir(data);
+            console.log({ id, imgUrl, imgAlt, info, date, time, timezone, city, country, attractions, price, link, moreFromThisAuthor, venue })
+            modalLightbox.insertAdjacentHTML('afterbegin', data1);
+            console.log(modalLightbox);
         })
             .catch(error => alert(error)); 
     
@@ -36,7 +39,8 @@ function onGalleryContainerClick(evt) {
     }
 
     closeModalBtn.addEventListener('click', onCloseModal);
-    lightboxOverlay.addEventListener('click', onCloseModal);
+    console.log(lightboxOverlay)
+    // lightboxOverlay.addEventListener('click', onCloseModal);
     window.addEventListener('keydown', onEscKeyPress);   
 };
 
