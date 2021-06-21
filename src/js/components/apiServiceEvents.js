@@ -11,6 +11,7 @@ export default class ApiService {
         //get with width of browser window in pixels: document.documentElement.clientWidth;
         this.size = (document.documentElement.clientWidth > 1279) ? 'size=20' : 'size=21'; // quantity of cards per 1 page
         this.cardsArr = {};
+        this.totalPages;
     }
 
     fetchQuery() {
@@ -19,6 +20,7 @@ export default class ApiService {
         const options = {
             method: 'GET', //it goes by default anyway - was done for some unexpected "options" just in case)
         };
+        
 
         return fetch(url, options)
             .then(responce => {
@@ -27,12 +29,11 @@ export default class ApiService {
                     return responce.json();
                 }
                 throw new Error('===Data not fetched from server!===');
-
+                
             })
             .then((data) => {
-                //this.page += 1; // left for pagination, if it is needed
-                const { page = {} } = data;
-                const { totalElements = 0 } = page;
+                
+                const totalElements = data?.page?.totalElements;
                 //console.log('20/21 events full RESPONCE ==>', data);////////////////////////////////////////////////////
                 
                 if ((totalElements != 0) && (data._embedded)) {
@@ -48,11 +49,15 @@ export default class ApiService {
             })
             .then((data) => {
                 //console.log('data1:data._embedded.events:', data._embedded.events);
-                const eventsArr = data._embedded.events;                
-                const currentPageNumber = data.page.number;
-                const totalPages = data.page.totalPages;
+                const eventsArr = data?._embedded?.events;                
+                const currentPageNumber = data?.page?.number;
+                const totalPages = data?.page?.totalPages;
 
-                    
+                ///////////////////// for pagination data update         
+                this.page = data?.page?.number;
+                this.totalPages = data?.page?.totalPages;
+
+                //console.log('API: this.page::::',this.page,'=============','API: this.totalPages::::',this.totalPages);
                  
                 const cardsArr = eventsArr.map(
                     (element) => {
@@ -60,15 +65,13 @@ export default class ApiService {
                         // Responce Object destructuring chain for "imgUrl"
                         const {url} = element.images.find((el) => (el.ratio === '4_3'));  //images of this ratio can be downloaded/ others failed with server error
                         
-                        // Responce Object destructuring chain for "date"
-                        const { dates } = element;
-                        const { start } = dates;
-                        const { localDate } = start;
+                        // Taking "date" from Responce Object 
+                        const localDate = element.dates?.start?.localDate;
 
-                        // Responce Object destructuring chain for "venue"
-                        const { _embedded } = element;
-                        const { venues} = _embedded;
-                        const eventVenue = venues[0].name;
+                        // Taking "venue" from Responce Object
+                        
+                        const { venues } = element?._embedded;
+                        const eventVenue = venues[0]?.name;
 
                         const card = {
                             id: element.id,  //on rendering "card.element" please put: data-value="{{id}}",
@@ -86,10 +89,13 @@ export default class ApiService {
                         
                         return card;
                     });
-                console.log('searchQuery: <', this.searchQuery,'>',
-                    'countryCode: <', this.countryCode,'>',
-                    'this.page: <',this.page + 1,'>',
-                    'galleryCards for render arrived ==>', cardsArr);////////////////////////////////////////////////////
+                
+                
+                // console.log('API below: searchQuery: <', this.searchQuery, '>',
+                //     'API below: countryCode: <', this.countryCode,'>',
+                //     'API below: this.page + 1: <', this.page + 1, '>',
+                //     'API below: this.totalPages: <', this.totalPages
+                //     );////////////////////////////////////////////////////'API below: galleryCards for render arrived ==>', cardsArr
                 
             return cardsArr;
             })
@@ -109,9 +115,9 @@ export default class ApiService {
     
 
     // left for pagination, if it is needed
-    resetPage() {
-        this.page = 0;
-    }
+    // resetPage() {
+    //     this.page = 0;
+    // }
 
     get query() {
         return this.searchQuery;
@@ -122,12 +128,28 @@ export default class ApiService {
     }
 
 
-    get country() {
-        return this.countryCode;
+    get countryCodeId() {
+    return this.countryCode;
     }
 
-    set country(newCountryCode) {
-        this.countryCode = newCountryCode;
+    set countryCodeId(newCountryCodeId) {
+    this.countryCode = newCountryCodeId;
+    }
+
+    get allPages() {
+        return this.totalPages;
+    }
+
+    set allPages(newPages) {
+        this.totalPages = newPages;
+    }
+
+    get currentPage() {
+        return this.page;
+    }
+
+    set currentPage(newPage) {
+        this.page = newPage;
     }
 
 }
