@@ -5,7 +5,7 @@ export default class ApiService {
     // https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&apikey={apikey}
     constructor() {
         this.searchQuery = '';
-        this.countryCode = 'US'; // default US... need to think about it
+        this.countryCode = ''; // default US... need to think about it
         this.page = 0; // !!!STARTS from 0 on server side, e.g. 0 === 1 for humans; left for pagination, if it is needed   
 
         //get with width of browser window in pixels: document.documentElement.clientWidth;
@@ -65,7 +65,9 @@ export default class ApiService {
                         // Taking "venue" from Responce Object
                         
                         const { venues } = element?._embedded;
-                        const eventVenue = venues[0]?.name;
+
+                        const eventVenue = venues[0].name;
+                        //console.log('eventVenuesArr:', venues)
 
                         const card = {
                             id: element.id,  //on rendering "card.element" please put: data-value="{{id}}",

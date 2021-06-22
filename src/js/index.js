@@ -7,6 +7,7 @@ import eventTpl from '../templates/eventTpl.hbs';
 // Component
 import Pagination from './components/pagination.js';
 import ApiServiceEvents from './components/apiServiceEvents.js';
+import ApiServiceOneEvent from './components/apiServiceOneEvent.js';  //for test purposes
 import countries from './countries.json';
 import './components/footer.js';
 import './components/select.js';
@@ -31,29 +32,36 @@ import '../../node_modules/basiclightbox/dist/basicLightbox.min.css';
 
 const pagination = new Pagination();
 
+//for test purposes
+// const eventCatcher = document.querySelector('BODY');
+// eventCatcher.addEventListener('click', (e)=> {console.log('On click:',e.target)});
+
+
 // раздел со ссылочками
 pagination.ref = document.querySelector('.pagination-list');
 const eventContainer = document.querySelector('.gallery_list');
 const inputRef = document.querySelector('.search-input');
 
 
-
+//for test purposes
 // const apiOneEvent = new ApiServiceOneEvent();
+// apiOneEvent.query = 'G5e0ZpnVeKeqT';
 // apiOneEvent
 //   .fetchQuery()
-//   .then(console.log('Fetched ONE EVENT for MODAL in index.js'))
+//     .then(data => { console.log('Fetched ONE EVENT for MODAL in index.js', data) })
 //   .catch(error => alert(error));
 
 
-// this block starts EMPTY querry request for USA --- DEFAULTS may be
+// this block starts EMPTY querry request for <ANY> country --- DEFAULTS may be
 // changed in class ApiServiceEvents()
+
 // the result of API's "fetchQuerry" is an Array of Objects
 const apiEvents = new ApiServiceEvents();
 apiEvents
   fetchEvents();
 
 
-inputRef.addEventListener('input', debounce(onSearch, 700));
+inputRef.addEventListener('input', debounce(onSearch, 900));
 
 ///////////////////////////////////////////////////////////////////
 /////// сюда переехал раздел по поиска ВВОДА из searchInput.js ////
