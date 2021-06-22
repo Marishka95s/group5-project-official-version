@@ -39,8 +39,7 @@ function onGalleryContainerClick(evt) {
     }
 
     closeModalBtn.addEventListener('click', onCloseModal);
-    console.log(lightboxOverlay)
-    // lightboxOverlay.addEventListener('click', onCloseModal);
+    lightboxOverlay.addEventListener('click', onCloseModal);
     window.addEventListener('keydown', onEscKeyPress);   
 };
 
@@ -52,6 +51,9 @@ function onEscKeyPress(event) {
 
 function onCloseModal() {
     modalLightbox.classList.remove('is-open');
+    clearModalContainer()
 }
 
-
+function clearModalContainer() {
+    lightboxOverlay.innerHTML = '';
+}
