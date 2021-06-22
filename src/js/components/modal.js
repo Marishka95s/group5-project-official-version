@@ -31,8 +31,8 @@ function onGalleryContainerClick(evt) {
             console.log({ id, event, promotor, imgUrl, imgAlt, info, date, time, timezone, city, country, attractions, price, link, moreFromThisAuthor, venue })
             modalLightbox.insertAdjacentHTML('afterbegin', data1);
             console.log(modalLightbox);
-        })
-            .catch(error => alert(error)); 
+        }).catch(error => alert(error))
+            ; //
     
     if (!modalLightbox.classList.contains('is-open')) {
         modalLightbox.classList.add('is-open');
