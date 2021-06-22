@@ -23,7 +23,7 @@
 
                 <h3 class="info__name">WHERE</h3>
                 <p class="modalEvent__city">{{city}}</p>
-                <p class="modalEvent__country">{{country}}</p>
+                <p class="modalEvent__countr">{{country}}</p>
                 <p class="modalEvent__place">{{venue}}</p>
 
                 <h3 class="info__name">WHO</h3>
@@ -32,7 +32,7 @@
                 {{/each}}
                 <h3 class="info__name">PRICES</h3>
                 {{#each this.price}}
-                    <p class="modalEvent__{{this.type}}">
+                    <p class="modalEvent__price">
                         <svg class="modalEvent__icon" aria-label="Barcode icon">
                             <use class="icon-nav" href="../images/sprite.svg#icon-code"></use>
                         </svg>
@@ -40,12 +40,16 @@
                     </p>
                 <a href="{{link}}" class="buyTickets__button">BUY TICKETS</a>
                 {{/each}}
+               
             </div>
         {{!-- </div> --}}
-        <a href="{{moreFromThisAuthor}}" class="moreInfo__button">MORE FROM THIS AUTHOR</a>
+       
     {{!-- </div> --}}
   {{!-- </div> --}}
  </div>
+ <div class="for__info">
+<a href="{{moreFromThisAuthor}}" class="moreInfo__button">MORE FROM THIS AUTHOR</a>
+</div>
 </div>
 
 
