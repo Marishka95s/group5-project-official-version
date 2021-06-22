@@ -2,6 +2,11 @@
   --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   --animation-duration: 250ms;
 }
+
+// потом убрать
+.modalEvent__icon {
+  display: none;
+}
 /* Lightbox */
 .lightbox {
   // align-items: center;
@@ -30,6 +35,7 @@
 
 .lightbox__overlay {
   // width: 272px;
+
   position: absolute;
   top: 50%;
   left: 50%;
@@ -45,21 +51,22 @@
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 75px;
-  min-height: 915px;
-  min-width: 272px;
+  height: 915px;
+  width: 272px;
   // top: 414px;
   @media screen and (min-width: 768px) {
     // top: 161px;
-    min-height: 831px;
-    min-width: 595px;
+    height: 831px;
+    width: 595px;
     padding-left: 50px;
     padding-right: 17px;
     padding-top: 28px;
+    border-radius: 300px 0px;
   }
   @media screen and (min-width: 1280px) {
     // top: 201px;
-    min-height: 1023px;
-    min-width: 942px;
+    height: 1023px;
+    width: 942px;
     padding-left: 30px;
     padding-right: 30px;
     padding-top: 62px;
