@@ -44,6 +44,7 @@
   // line-height: 0.8;
   padding-left: 12px;
   padding-right: 12px;
+  padding-top: 75px;
   min-height: 915px;
   min-width: 272px;
   // top: 414px;
@@ -51,8 +52,9 @@
     // top: 161px;
     min-height: 831px;
     min-width: 595px;
-    padding-left: 17px;
+    padding-left: 50px;
     padding-right: 17px;
+    padding-top: 28px;
   }
   @media screen and (min-width: 1280px) {
     // top: 201px;
@@ -60,6 +62,7 @@
     min-width: 942px;
     padding-left: 30px;
     padding-right: 30px;
+    padding-top: 62px;
   }
 }
 
@@ -103,41 +106,47 @@
 }
 
 .modalEvent__image--round {
-  position: absolute;
-  top: 75px;
-  left: 50%;
   width: 102px;
   height: 102px;
   object-fit: cover;
   border-radius: 50%;
   @media screen and (min-width: 768px) {
-    top: 28px;
     width: 70px;
     height: 70px;
   }
   @media screen and (min-width: 1280px) {
-    top: 62px;
     width: 132px;
     height: 132px;
   }
 }
+.modalEvent__content {
+  margin-top: 7.8px;
+  @media screen and (min-width: 768px) {
+    margin-top: 36px;
+  }
+  @media screen and (min-width: 1280px) {
+    margin-top: 41px;
+  }
+}
+
 .modalEvent__image--cube {
   display: none;
-  position: absolute;
+  margin: 0;
+  // position: absolute;
   @media screen and (min-width: 768px) {
     display: block;
     width: 233px;
     height: 416px;
     object-fit: cover;
-    top: 141px;
-    left: 50px;
+    // top: 141px;
+    // left: 50px;
   }
   @media screen and (min-width: 1280px) {
     width: 360px;
     height: 641px;
     object-fit: cover;
-    top: 228px;
-    left: 60px;
+    // top: 228px;
+    // left: 60px;
   }
 }
 
@@ -151,7 +160,7 @@
   }
 }
 .modalEvent__information {
-  position: absolute;
+  // position: absolute;
   top: 195px;
   text-align: center;
   font-size: 16px;
@@ -160,13 +169,11 @@
 
   color: #0e0e0e;
   @media screen and (min-width: 768px) {
-    top: 141px;
-    left: 313px;
     text-align: start;
+    margin-left: 30px;
   }
   @media screen and (min-width: 1280px) {
-    top: 235px;
-    left: 450px;
+    margin-left: 60px;
   }
 }
 .modalEvent__information p {
