@@ -5,8 +5,8 @@
   "main": "index.js",
   "homepage": "https://Marishka95s.github.io/group5-project-official-version",
   "scripts": {
-    "dev": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /group5-project-official-version/"
+   "dev": "parcel src/*.html --no-source-maps",
+    "build": "parcel build src/*.html --no-source-maps --public-url /group5-project-official-version/"
   },
   "repository": {
     "type": "git",

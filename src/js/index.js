@@ -1,11 +1,13 @@
 var debounce = require('lodash.debounce');
 
 // Templates
-import '../templates/cards.hbs';
-import '../templates/eventTpl.hbs';
+
+import eventTpl from '../templates/eventTpl.hbs';
 
 // Component
-import ApiServiceOneEvent from './components/apiServiceEvents.js';
+import Pagination from './components/pagination.js';
+import ApiServiceEvents from './components/apiServiceEvents.js';
+import countries from './countries.json';
 import './components/footer.js';
 import './components/select.js';
 import './components/searchInput.js';
@@ -16,6 +18,7 @@ import './components/firstSearch.js';
 import './components/teamLightbox.js';
 import './components/modal.js';
 
+
 // import pontyfy styles and js
 import '@pnotify/core/dist/BrightTheme.css';
 import '@pnotify/core/dist/PNotify.css';
@@ -25,23 +28,7 @@ import { error } from '@pnotify/core/dist/PNotify.js';
 import '../sass/main.scss';
 import '../../node_modules/basiclightbox/dist/basicLightbox.min.css';
 
-// this block starts test EMPTY querry request for USA
-// the result is an Array of Objects => see console log
-const apiOneEvent = new ApiServiceOneEvent();
-apiOneEvent
-  .fetchQuery()
-  .then(console.log('Fetched ONE in index.js'))
-  .catch(error => alert(error));
 
-const apiEvents = new ApiServiceEvents();
-apiEvents
-  .fetchQuery()
-  .then(console.log('Fetched ALL in index.js'))
-  .catch(error => alert(error));
-
-
-
-  
 const pagination = new Pagination();
 
 // раздел со ссылочками
@@ -49,7 +36,28 @@ pagination.ref = document.querySelector('.pagination-list');
 const eventContainer = document.querySelector('.gallery_list');
 const inputRef = document.querySelector('.search-input');
 
-inputRef.addEventListener('input', debounce(onSearch, 500));
+
+
+// const apiOneEvent = new ApiServiceOneEvent();
+// apiOneEvent
+//   .fetchQuery()
+//   .then(console.log('Fetched ONE EVENT for MODAL in index.js'))
+//   .catch(error => alert(error));
+
+
+// this block starts EMPTY querry request for USA --- DEFAULTS may be
+// changed in class ApiServiceEvents()
+// the result of API's "fetchQuerry" is an Array of Objects
+const apiEvents = new ApiServiceEvents();
+apiEvents
+  fetchEvents();
+
+
+inputRef.addEventListener('input', debounce(onSearch, 700));
+
+///////////////////////////////////////////////////////////////////
+/////// сюда переехал раздел по поиска ВВОДА из searchInput.js ////
+///////////////////////////////////////////////////////////////////
 
 
 
@@ -58,16 +66,46 @@ function onSearch(event) {
 
     console.log('apiEvents.query:', apiEvents.query);
 
-    if (apiEvents.query !== '' && apiEvents.query !== ' ') {
-      //API.resetPage();  //// Jack: tryed to disable as it is not needed
+    if (apiEvents.query !== ' ') { // пустой позволим, чтобы сортировка по стране срабатывала
+      
       eventContainer.innerHTML = '';
-      pagination.ref.innerHTML = ''; //// on fetch clear pagination
+      pagination.ref.innerHTML = ''; //// before "fetchEvents" we clear pagination
       fetchEvents();
       //console.log('apiEvents.totalpages:', apiEvents.totalpages);
     } else {
         error();
     }
 }
+
+/////////////////////////////////////////////////////////////////////
+//// сюда переехал раздел поиска по СТРАНЕ из searchByCountry.js ////
+/////////////////////////////////////////////////////////////////////
+
+const inner = document.querySelector('[data-choice="active"]')
+//const eventContainer = document.querySelector('.gallery_list');  -- уже есть выше
+
+//const cntrySrch = new Api(); -- апи стартуем один экземпляр на всех, чтоб он хранил в себе все состояния запросов
+inner.addEventListener('change', () => {
+    const selectedCountry = inner.innerText;
+    console.log(selectedCountry);
+    let searchTerm = selectedCountry;
+    let countryValue = countries.find(country => country.label === searchTerm).value;
+
+    apiEvents.countryCodeId = countryValue;
+
+    console.log(apiEvents.countryCode);
+    eventContainer.innerHTML = ''; ///////////////////// Jack: code line was added
+    pagination.ref.innerHTML = ''; //// before "fetchEvents" we clear pagination
+    fetchEvents();
+})
+// function fetchEvents() {
+//     cntrySrch.fetchQuery().then(card => {
+//        eventContainer.insertAdjacentHTML('beforeend', eventTpl(card))  
+//     }).catch(error => alert(error));
+// }
+
+
+
 
 function fetchEvents() {
     apiEvents.fetchQuery().then(card => {
@@ -91,7 +129,6 @@ if (pagination.allPages > 1) {
   }
   
 // pagination render onPageClick
-
 pagination.ref.addEventListener('click', onPageClick);
 
 
@@ -117,16 +154,25 @@ function onPageClick(evt) {
     }
   
     if (clickedPage === '...') {
+        if (evt.target.classList.contains('js-lower')) {
+            pagination.currentPage = Math.ceil(pagination.currentPage / 2);
+        } else {
+            pagination.currentPage = pagination.allPages -
+                Math.floor((pagination.allPages - pagination.currentPage)/2);
+        }
+        apiEvents.currentPage = Number(pagination.currentPage - 1);
+        fetchEvents();
+        pagination.createPaginationMarkup();
         return;
     }
 
     if ((clickedPage === 'Prev') && (pagination.currentPage > 1)) {
-        evt.target.classList.toggle('active');
-        pagination.page -= 1;
+        //evt.target.classList.toggle('active');
+        pagination.currentPage -= 1;
         apiEvents.currentPage = pagination.currentPage - 1;
         fetchEvents();
         pagination.createPaginationMarkup();
-        pagination.createPaginationMarkup();
+        
         return;
     }
     if ((clickedPage === 'Next') && (pagination.currentPage < pagination.allPages)) {
@@ -135,7 +181,7 @@ function onPageClick(evt) {
         apiEvents.currentPage = pagination.currentPage - 1;
         fetchEvents();
         pagination.createPaginationMarkup();
-        pagination.createPaginationMarkup();
+        
         return;
     }
 

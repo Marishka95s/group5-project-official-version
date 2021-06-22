@@ -6,30 +6,22 @@ export default class ApiService {
     constructor() {
         this.searchQuery = '';
         this.countryCode = 'US'; // default US... need to think about it
-        this.page = 0; // !!!STARTS from 0, e.g. 0 === 1 for humans; left for pagination, if it is needed   
+        this.page = 0; // !!!STARTS from 0 on server side, e.g. 0 === 1 for humans; left for pagination, if it is needed   
 
         //get with width of browser window in pixels: document.documentElement.clientWidth;
         this.size = (document.documentElement.clientWidth > 1279) ? 'size=20' : 'size=21'; // quantity of cards per 1 page
-        this.cardsArr = {};
         this.totalPages;
     }
 
     fetchQuery() {
         const url = `${BASE_URL}?keyword=${this.searchQuery}&countryCode=${this.countryCode}&page=${this.page}&${this.size}&${KEY}`;
         
-        const options = {
-            method: 'GET', //it goes by default anyway - was done for some unexpected "options" just in case)
-        };
-        
-
-        return fetch(url, options)
+        return fetch(url)
             .then(responce => {
-                if (responce.status === 200) {
-                    
+                if (responce.status === 200) {                   
                     return responce.json();
                 }
-                throw new Error('===Data not fetched from server!===');
-                
+                throw new Error('===Data not fetched from server!===');    
             })
             .then((data) => {
                 
@@ -55,7 +47,9 @@ export default class ApiService {
 
                 ///////////////////// for pagination data update         
                 this.page = data?.page?.number;
+
                 this.totalPages = data?.page?.totalPages;
+                if (this.totalPages > 50) {this.totalPages = 50} // !!!API do not allow download more events for FREE
 
                 //console.log('API: this.page::::',this.page,'=============','API: this.totalPages::::',this.totalPages);
                  
@@ -90,7 +84,6 @@ export default class ApiService {
                         return card;
                     });
                 
-                
                 // console.log('API below: searchQuery: <', this.searchQuery, '>',
                 //     'API below: countryCode: <', this.countryCode,'>',
                 //     'API below: this.page + 1: <', this.page + 1, '>',
@@ -99,25 +92,20 @@ export default class ApiService {
                 
             return cardsArr;
             })
-
-
     }
 
-    async getEvent() {
-        const url = `${BASE_URL}?keyword=${this.searchQuery}&countryCode=${this.countryCode}&page=${this.page}&${this.size}&${KEY}`;
-            
-		const res = await fetch(url);
-		if (!res.ok) {
-			throw res;
-		}
-		this.query = await res.json();
-	}
-    
 
-    // left for pagination, if it is needed
-    // resetPage() {
-    //     this.page = 0;
-    // }
+    // Ievgen R:  -- this code is disabled; default API was used
+
+    // async getEvent() {
+    //     const url = `${BASE_URL}?keyword=${this.searchQuery}&countryCode=${this.countryCode}&page=${this.page}&${this.size}&${KEY}`;
+            
+	// 	const res = await fetch(url);
+	// 	if (!res.ok) {
+	// 		throw res;
+	// 	}
+	// 	this.query = await res.json();
+	// }
 
     get query() {
         return this.searchQuery;
@@ -126,7 +114,6 @@ export default class ApiService {
     set query(newQuery) {
         this.searchQuery = newQuery;
     }
-
 
     get countryCodeId() {
     return this.countryCode;

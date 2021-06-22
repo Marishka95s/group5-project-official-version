@@ -1,10 +1,18 @@
-import Api from './apiServiceEvents';
-import eventTpl from '../../templates/eventTpl.hbs';
-import error from './error';
 
-const debounce = require('lodash.debounce');
 
-const API = new Api();
+////////////////////////////////////////
+//// Sorry! код переехал в index.js ////   Ievgen R.
+////////////////////////////////////////
+
+
+
+// import Api from './apiServiceEvents';
+// import eventTpl from '../../templates/eventTpl.hbs';
+// import error from './error';
+
+// const debounce = require('lodash.debounce');
+
+// const API = new Api();
 //API.query.toLowerCase();  //// Jack: tryed to disable as it is not needed
 // const eventContainer = document.querySelector('.gallery_list');
 // const input = document.querySelector('.search-input');
