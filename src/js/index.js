@@ -8,6 +8,7 @@ import eventTpl from '../templates/eventTpl.hbs';
 import Pagination from './components/pagination.js';
 import ApiServiceEvents from './components/apiServiceEvents.js';
 import countries from './countries.json';
+import err from './components/error.js';
 import './components/footer.js';
 import './components/select.js';
 import './components/searchInput.js';
@@ -73,7 +74,7 @@ function onSearch(event) {
       fetchEvents();
       //console.log('apiEvents.totalpages:', apiEvents.totalpages);
     } else {
-        error();
+        err();
     }
 }
 
@@ -118,7 +119,7 @@ function fetchEvents() {
        // console.log('in index.js pagination.allPages:::', pagination.allPages,'API:', apiEvents.allPages);
        // console.log('in index.js pagination.currentPage:::', pagination.currentPage,'API', apiEvents.currentPage);
         pagination.createPaginationMarkup();
-    }).catch(error => alert(error))///////////////////// Jack: code line "catch" was added to catch an error
+    }).catch(error => err())///////////////////// Jack: code line "catch" was added to catch an error
 }
 
 
