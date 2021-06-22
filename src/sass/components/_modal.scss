@@ -34,44 +34,37 @@
 }
 
 .lightbox__overlay {
-  // width: 272px;
-
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  // margin-left: auto;
-  // margin-right: auto;
-  background-color: #fff;
-  border-radius: 150px 0;
-  // padding-right: 17px;
-  // padding-left: 13px;
-  // position: sticky;
-  // line-height: 0.8;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 75px;
-  height: 915px;
-  width: 272px;
-  // top: 414px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 150px 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    height: 600px;
+    width: 300px;
   @media screen and (min-width: 768px) {
-    // top: 161px;
-    height: 831px;
-    width: 595px;
-    padding-left: 50px;
+    top: 436px;
+    height: 681px;
+    width: 695px;
+    padding-left: 70px;
     padding-right: 17px;
-    padding-top: 28px;
+    padding-top: 18px;
     border-radius: 300px 0px;
   }
-  @media screen and (min-width: 1280px) {
-    // top: 201px;
-    height: 1023px;
-    width: 942px;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-top: 62px;
+  @media screen and (min-width: 1280px) { 
+    height: 680px;
+    width: 975px;
+    padding-left: 70px;
+    padding-right: 20px;
+    padding-top: 10px;
+    border-radius: 300px 0px;
+    top: 360px;
   }
 }
+
 
 // .lightbox__content {
 //   transform: scale(0.95);
@@ -84,32 +77,51 @@
 // }
 
 .lightbox__button1 {
-  position: absolute;
-  top: 8px;
-  right: 8px;
   display: flex;
-  align-items: center;
+  position: absolute;
+  top: 285px;
+  right: -32px;
   justify-content: center;
-  width: 48px;
-  height: 48px;
-  padding: 0;
-  margin: 0;
-  border: none;
-  border-radius: 50%;
-  background-color: transparent;
-  color: #fff;
+  align-items: center;
+  width: 25px;
+  height: 25px;
   cursor: pointer;
-  transition: background-color var(--animation-duration) var(--timing-function);
-  outline: none;
-  // background-image: url('sprite.5ec50489.svg#icon-close');
-  background-position: center;
-  background-size: 60%;
-  background-repeat: no-repeat;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background-color: #fff;
+  fill: #000;
+
+  @media screen and (min-width: 768px) {
+    top: -30px;
+    right: -60px;
+    width: 32px;
+    height: 32px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    top: 6px;
+    left: 1053px;
+    width: 50px;
+    height: 50px;
+  }
+
+  &:hover, &:focus {
+    border: 1px solid $btn-modal;
+    background-color: $title-text-color;
+    transform: scale(1.05);
+  }
+}
+.close-icon1 {
+  @media screen and (min-width: 1280px) {
+    width: 16px;
+    height: 16px;
+    fill: #fff;
+  }
 }
 
 .lightbox__button:hover,
 .lightbox__button:focus {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #dc56c5;
 }
 
 .modalEvent__image--round {
