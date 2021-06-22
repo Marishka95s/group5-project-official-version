@@ -25,10 +25,10 @@ function onGalleryContainerClick(evt) {
     apiEvents.eventId = necessaryId;
     apiEvents.fetchQuery()            
         .then(data => {
-            const { id, imgUrl, imgAlt, info, date, time, timezone, city, country, attractions, price, link, moreFromThisAuthor, venue } = data;
-            const data1 = modalTpl({ id, imgUrl, imgAlt, info, date, time, timezone, city, country, attractions, price, link, moreFromThisAuthor, venue });
+            const { id, event, promotor, imgUrl, imgAlt, info, date, time, timezone, city, country, attractions, price, link, moreFromThisAuthor, venue } = data;
+            const data1 = modalTpl({ id, event, promotor, imgUrl, imgAlt, info, date, time, timezone, city, country, attractions, price, link, moreFromThisAuthor, venue });
             console.dir(data);
-            console.log({ id, imgUrl, imgAlt, info, date, time, timezone, city, country, attractions, price, link, moreFromThisAuthor, venue })
+            console.log({ id, event, promotor, imgUrl, imgAlt, info, date, time, timezone, city, country, attractions, price, link, moreFromThisAuthor, venue })
             modalLightbox.insertAdjacentHTML('afterbegin', data1);
             console.log(modalLightbox);
         })

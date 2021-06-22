@@ -42,7 +42,8 @@ export default class ApiServiceOne {
                 const timeToMinutes = event.dates.start.localTime.slice(0, strLength - 3);
 
                 // concatinating data for "info"
-                const info = `${event.name}<br>${event.classifications[0].genre.name}<br>${event.promoters[0].description}`;
+                const info = event.classifications[0].genre.name;
+                const promoter = event.promoters[0].description;
 
                 //
                 const attractionsArray = event._embedded.attractions.map(({ name }) => name);
@@ -53,11 +54,29 @@ export default class ApiServiceOne {
                     return { type, min, max, currency, }
                 });
                                 
+                // const modalCard = {
+                //     id: event.id, // unneccessary info
+                //     event: event.name, // unneccessary info
+                //     imgUrl: url,
+                //     imgAlt: `Image of '${event.name}'`,
+                //     info: info, // INFO  divided with <br> each statement starts from new line
+                //     date: event.dates.start.localDate, // WHEN
+                //     time: timeToMinutes, // WHEN
+                //     timezone: event.dates.timezone, // WHEN
+                //     city: event._embedded.venues[0].city.name, // WHERE
+                //     country: event._embedded.venues[0].country.name, // WHERE
+                //     attractions: attractionsArray, // WHO in array
+                //     price: priceArrayOfObjects,
+                //     link: event.url, // href for button "BUY TICKETS"
+                //     moreFromThisAuthor: event._embedded.attractions[0].url,  // href for button "moreFromThisAuthor"
+                //     venue: event._embedded.venues[0].name,
+                // };
                 const modalCard = {
                     id: event.id, // unneccessary info
                     event: event.name, // unneccessary info
                     imgUrl: url,
                     imgAlt: `Image of '${event.name}'`,
+                    promoter: promoter,
                     info: info, // INFO  divided with <br> each statement starts from new line
                     date: event.dates.start.localDate, // WHEN
                     time: timeToMinutes, // WHEN

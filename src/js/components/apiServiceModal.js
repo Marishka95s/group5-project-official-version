@@ -42,8 +42,8 @@ export default class ApiServiceModal {
                 const timeToMinutes = event.dates.start.localTime.slice(0, strLength - 3);
 
                 // concatinating data for "info"
-                const info = `${event.name}<br>${event.classifications[0].genre.name}<br>${event.promoters[0].description}`;
-
+                const info = event.classifications[0].genre.name;
+                const promoter = event.promoters[0].description;
                 //
                 const attractionsArray = event._embedded.attractions.map(({ name }) => name);
                 
@@ -58,6 +58,7 @@ export default class ApiServiceModal {
                     event: event.name, // unneccessary info
                     imgUrl: url,
                     imgAlt: `Image of '${event.name}'`,
+                    promoter: promoter,
                     info: info, // INFO  divided with <br> each statement starts from new line
                     date: event.dates.start.localDate, // WHEN
                     time: timeToMinutes, // WHEN
