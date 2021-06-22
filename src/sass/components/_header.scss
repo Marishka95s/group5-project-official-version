@@ -1,8 +1,18 @@
+
 .header {
   background-position: center;
   background-repeat: no-repeat;
   background-image: url('../images/hero/mobile_background@1x.jpg');
   background-size: 100%;
+
+  // background: {
+  //   color: black;
+  //   image: linear-gradient(to top, $bg-color, $input-color),
+  //     url('../../images/pic.png');
+  //   repeat: no-repeat;
+  //   position: center;
+  //   size: cover;
+  // }
 
   @media screen and (min-device-pixel-ratio: 2),
     screen and (-o-min-device-pixel-ratio: 2/1),
@@ -57,7 +67,13 @@
     }
   }
 }
+.bottom-grad {
+  bottom: 0;
+  height: 102px;
+  width: 100%;
+  background-color: #0D0D0D;
 
+}
 .header-components {
   padding-top: 78px;
   padding-bottom: 112px;
