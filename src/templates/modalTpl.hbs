@@ -1,17 +1,17 @@
-<div class="lightbox__overlay"></div>
+<div class="lightbox__overlay">
 
-<div class="lightbox__content">
-  <div class="lightbox">
-    <div class="modal">
-        <button class="btn_close">
+{{!-- <div class="lightbox__content"> --}}
+  {{!-- <div class="lightbox"> --}}
+    {{!-- <div class="modal"> --}}
+        {{!-- <button class="btn_close">
             <svg class="icon-close">
                 <use href="../images/sprite.svg#icon-close"></use>
             </svg>
-        </button>
+        </button> --}}
         <img class="modalEvent__image--round" src="{{imgUrl}}" alt="{{imgAlt}}" />
         <div class="modalEvent__content">
             <img class="modalEvent__image--cube" src="{{imgUrl}}" alt="{{imgAlt}}" />
-            <div class="modalEvent__info">
+            <div class="modalEvent__information">
                 <h3 class="info__name">INFO</h3>
                 <p class="modalEvent__info">{{info}}</p>
 
@@ -41,12 +41,12 @@
                 {{!-- <a href="{{link}}" class="buyTickets__button">BUY TICKETS</a> --}}
                 {{/each}}
             </div>
-        </div>
+        {{!-- </div> --}}
         <a href="{{moreFromThisAuthor}}" class="moreInfo__button">MORE FROM THIS AUTHOR</a>
-    </div>
-  </div>
+    {{!-- </div> --}}
+  {{!-- </div> --}}
  </div>
-
+</div>
 
 
 
