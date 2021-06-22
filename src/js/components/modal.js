@@ -3,7 +3,7 @@ import modalTpl from '../../templates/modalTpl.hbs';
 
 const galleryContainer = document.querySelector('.gallery_list');
 const modalLightbox = document.querySelector('.js-lightbox');
-const closeModalBtn = document.querySelector('.lightbox__button');
+const closeModalBtn = document.querySelector('.lightbox__button1');
 const lightboxOverlay = document.querySelector('.lightbox__overlay');
 // const modalContent = document.querySelector('.lightbox__content');
 // Modal components
@@ -39,8 +39,7 @@ function onGalleryContainerClick(evt) {
     }
 
     closeModalBtn.addEventListener('click', onCloseModal);
-    console.log(lightboxOverlay)
-    // lightboxOverlay.addEventListener('click', onCloseModal);
+    lightboxOverlay.addEventListener('click', onCloseModal);
     window.addEventListener('keydown', onEscKeyPress);   
 };
 
@@ -52,6 +51,9 @@ function onEscKeyPress(event) {
 
 function onCloseModal() {
     modalLightbox.classList.remove('is-open');
+    clearModalContainer()
 }
 
-
+function clearModalContainer() {
+    lightboxOverlay.innerHTML = '';
+}

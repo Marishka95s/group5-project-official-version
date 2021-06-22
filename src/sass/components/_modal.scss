@@ -34,44 +34,37 @@
 }
 
 .lightbox__overlay {
-  // width: 272px;
-
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  // margin-left: auto;
-  // margin-right: auto;
-  background-color: #fff;
-  border-radius: 150px 0;
-  // padding-right: 17px;
-  // padding-left: 13px;
-  // position: sticky;
-  // line-height: 0.8;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 75px;
-  height: 915px;
-  width: 272px;
-  // top: 414px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 150px 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    height: 600px;
+    width: 300px;
   @media screen and (min-width: 768px) {
-    // top: 161px;
-    height: 831px;
-    width: 595px;
-    padding-left: 50px;
+    top: 436px;
+    height: 731px;
+    width: 695px;
+    padding-left: 70px;
     padding-right: 17px;
-    padding-top: 28px;
+    padding-top: 18px;
     border-radius: 300px 0px;
   }
-  @media screen and (min-width: 1280px) {
-    // top: 201px;
-    height: 1023px;
-    width: 942px;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-top: 62px;
+  @media screen and (min-width: 1280px) { 
+    height: 680px;
+    width: 975px;
+    padding-left: 70px;
+    padding-right: 20px;
+    padding-top: 10px;
+    border-radius: 300px 0px;
+    top: 360px;
   }
 }
+
 
 // .lightbox__content {
 //   transform: scale(0.95);
@@ -84,32 +77,61 @@
 // }
 
 .lightbox__button1 {
-  position: absolute;
-  top: 8px;
-  right: 8px;
   display: flex;
-  align-items: center;
+  position: absolute;
+  top: 30px;
+  left: 265px;
+  width: 40px;
+  height: 40px;
   justify-content: center;
-  width: 48px;
-  height: 48px;
-  padding: 0;
-  margin: 0;
-  border: none;
-  border-radius: 50%;
-  background-color: transparent;
-  color: #fff;
+  align-items: center;
+  
   cursor: pointer;
-  transition: background-color var(--animation-duration) var(--timing-function);
-  outline: none;
-  // background-image: url('sprite.5ec50489.svg#icon-close');
-  background-position: center;
-  background-size: 60%;
-  background-repeat: no-repeat;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background-color: #fff;
+  fill: #000;
+
+  @media screen and (min-width: 768px) {
+    top: 75px;
+    left: 682px;
+    width: 45px;
+    height: 45px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    top: 35px;
+    left: 1075px;
+    width: 40px;
+    height: 40px;
+  }
+
+  &:hover, &:focus {
+    border: 1px solid $btn-modal;
+    background-color: $title-text-color;
+    transform: scale(1.05);
+  }
 }
+.icon-close1 {
+  fill: #4C00FE;
+  width: 17px;
+  height: 17px;
+
+  @media screen and (min-width: 768px) {
+    width: 17px;
+    height: 17px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 25px;
+    height: 25px;    
+  }
+}
+
 
 .lightbox__button:hover,
 .lightbox__button:focus {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #dc56c5;
 }
 
 .modalEvent__image--round {
@@ -127,8 +149,9 @@
   }
 }
 .modalEvent__content {
-  margin-top: 7.8px;
+  margin-top: 8px;
   display: flex;
+  justify-content: center;
   @media screen and (min-width: 768px) {
     margin-top: 36px;
   }
@@ -161,7 +184,7 @@
 .info__name {
   color: #dc56c5;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 16px;
   margin-bottom: 5px;
   @media screen and (min-width: 1280px) {
     margin-bottom: 7px;
@@ -172,7 +195,7 @@
   // position: absolute;
   top: 195px;
   text-align: center;
-  font-size: 16px;
+  font-size: 14px;
   margin-bottom: -20px;
   width: 243px;
 
@@ -188,8 +211,8 @@
 }
 .modalEvent__info,
 .modalEvent__country,
-.modalEvent__place,
-.modalEvent__artist {
+.modalEvent__place
+ {
   margin-bottom: 10px;
   line-height: 20px;
   @media screen and (min-width: 1280px) {
@@ -198,6 +221,15 @@
     font-size: 18px;
   }
 }
+.modalEvent__artist{
+  line-height: 20px;
+  @media screen and (min-width: 1280px) {
+    margin-bottom: 20px;
+    line-height: 22px;
+    font-size: 18px;
+  }
+}
+
 .modalEvent__date,
 .modalEvent__time,
 .modalEvent__city,
@@ -221,7 +253,7 @@
   padding-bottom: 10px;
   padding-left: 3px;
   padding-right: 3px;
-  margin-top: 25px;
+  margin-top: 15px;
   bottom: 104px;
   margin-left: auto;
   margin-right: auto;
@@ -231,14 +263,65 @@
   }
 }
 .modalEvent__price {
+  position: relative;
   margin-bottom: 10px;
   line-height: 20px;
+  padding-left: 50px;
+  text-align: left;
   @media screen and (min-width: 1280px) {
     margin-bottom: 20px;
     line-height: 22px;
     font-size: 18px;
   }
 }
+
+.modalEvent__icon{
+  display: block;
+  position: absolute;
+  top: 2px;
+  left: 15px;
+  // border: 1px solid #dc56c5;
+  width: 24px;
+  height: 16px;
+  justify-content: center;
+  align-items: center;
+  
+  cursor: pointer;
+  // border: 1px solid transparent;
+  background-image: url("../../src/images/sprite.svg#icon-code");
+  fill: #000;
+
+  // @media screen and (min-width: 768px) {
+  //   top: 75px;
+  //   left: 682px;
+  //   width: 45px;
+  //   height: 45px;
+  // }
+
+  // @media screen and (min-width: 1280px) {
+  //   top: 35px;
+  //   left: 1075px;
+  //   width: 40px;
+  //   height: 40px;
+  // }
+
+  // &:hover, &:focus {
+  //   border: 1px solid $btn-modal;
+  //   background-color: $title-text-color;
+  //   transform: scale(1.05);
+  // }
+}
+// .icon-nav {
+//   display: flex;
+//   border: 1px solid#dc56c5;
+//   width: 24px;
+//   height: 16px;
+//   justify-content: center;
+//   align-items: center;
+//     cursor: pointer;  
+//   fill: #000;
+// }
+
 .buyTickets__button {
   line-height: 20px;
   display: inline-block;
