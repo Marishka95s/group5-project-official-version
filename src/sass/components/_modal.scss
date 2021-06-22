@@ -121,6 +121,7 @@
 }
 .modalEvent__content {
   margin-top: 7.8px;
+  display: flex;
   @media screen and (min-width: 768px) {
     margin-top: 36px;
   }
