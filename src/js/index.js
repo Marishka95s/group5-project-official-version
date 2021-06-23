@@ -1,5 +1,4 @@
 var debounce = require('lodash.debounce');
-
 // Templates
 import eventTpl from '../templates/eventTpl.hbs';
 
@@ -57,15 +56,7 @@ const inputRef = document.querySelector('.search-input');
 const apiEvents = new ApiServiceEvents();
 apiEvents
   fetchEvents();
-
-
 inputRef.addEventListener('input', debounce(onSearch, 1300));
-
-///////////////////////////////////////////////////////////////////
-/////// сюда переехал раздел по поиска ВВОДА из searchInput.js ////
-///////////////////////////////////////////////////////////////////
-
-
 
 function onSearch(event) {
     apiEvents.query = event.target.value.toLowerCase().trim();
@@ -82,10 +73,6 @@ function onSearch(event) {
         err();
     }
 }
-
-/////////////////////////////////////////////////////////////////////
-//// сюда переехал раздел поиска по СТРАНЕ из searchByCountry.js ////
-/////////////////////////////////////////////////////////////////////
 
 const inner = document.querySelector('[data-choice="active"]')
 //const eventContainer = document.querySelector('.gallery_list');  -- уже есть выше
