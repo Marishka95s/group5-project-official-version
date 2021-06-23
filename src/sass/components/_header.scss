@@ -66,17 +66,21 @@
     }
   }
 }
-.header .container {
+.header-bg {
   background-color: rgba(11, 11, 11, 0.5);
   height: 100%;
   width: 100%;
 }
 .bottom-grad {
   position: relative;
-  bottom: 35px;
+  bottom: 53px;
   height: 102px;
   width: 100%;
   background: linear-gradient(180deg, rgba(13, 13, 13, 0.19) 0%, rgba(14, 14, 14, 0.8) 100%);
+  @media screen and (min-width: 768px) {
+    bottom: 50px;
+    height: 102px;
+  }
 }
 .header-components {
   padding-top: 78px;
@@ -172,8 +176,13 @@
   position: absolute;
   width: 12px;
   height: 12px;
-  bottom: 14px;
-  right: 44px;
+  bottom: 3px;
+  right: 32px;
+
+  @media screen and (min-width: 768px) {
+    bottom: 13px;
+    right: 52px;
+  }
 }
 
 input[type='text']::-webkit-input-placeholder {
