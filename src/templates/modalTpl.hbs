@@ -5,9 +5,11 @@
             <div class="modalEvent__information">
                 <h3 class="info__name">WHO</h3>
 
-                {{#each this.attractions}}
-                    <p class="modalEvent__artist">{{this}}</p>
-                {{/each}}
+                <p class="modalEvent__artist">
+                    {{#each this.attractions}}
+                    <span>{{this}}{{#unless @last}},{{/unless}}</span>
+                    {{/each}}
+                </p>
                                 
                 <h3 class="info__name">WHEN</h3>
                 <p class="modalEvent__date">{{date}} - {{time}} {{timezone}}</p>

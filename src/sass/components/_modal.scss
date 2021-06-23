@@ -3,18 +3,12 @@
   --animation-duration: 250ms;
 }
 
-// потом убрать
-.modalEvent__icon {
-  display: none;
-}
+// // потом убрать
+// .modalEvent__icon {
+//   display: none;
+// }
 /* Lightbox */
 .lightbox {
-  // align-items: center;
-  // justify-content: center;
-  // position: absolute;
-
-  // width: 100vw;
-  // height: 100vh;
   opacity: 0;
 
   pointer-events: none;
@@ -47,7 +41,7 @@
     width: 300px;
   @media screen and (min-width: 768px) {
     top: 436px;
-    height: 731px;
+    height: 660px;
     width: 695px;
     padding-left: 70px;
     padding-right: 17px;
@@ -93,7 +87,7 @@
   fill: #000;
 
   @media screen and (min-width: 768px) {
-    top: 75px;
+    top: 110px;
     left: 682px;
     width: 45px;
     height: 45px;
@@ -153,10 +147,12 @@
   display: flex;
   justify-content: center;
   @media screen and (min-width: 768px) {
+    justify-content: space-around;
     margin-top: 36px;
   }
   @media screen and (min-width: 1280px) {
-    margin-top: 41px;
+    margin-top: 0;
+    justify-content: space-between;
   }
 }
 
@@ -174,10 +170,9 @@
   }
   @media screen and (min-width: 1280px) {
     width: 360px;
-    height: 641px;
+    height: 475px;
     object-fit: cover;
-    // top: 228px;
-    // left: 60px;
+    margin-left: 10px;
   }
 }
 
@@ -202,11 +197,10 @@
   color: #0e0e0e;
   @media screen and (min-width: 768px) {
     text-align: start;
-    margin-left: 30px;
   }
   @media screen and (min-width: 1280px) {
-    margin-left: 60px;
-    margin-bottom: -31px;
+    margin-left: 0px;
+    width: 400px;
   }
 }
 .modalEvent__info,
@@ -224,7 +218,6 @@
 .modalEvent__artist{
   line-height: 20px;
   @media screen and (min-width: 1280px) {
-    margin-bottom: 20px;
     line-height: 22px;
     font-size: 18px;
   }
@@ -255,11 +248,15 @@
   padding-right: 3px;
   margin-top: 15px;
   bottom: 104px;
+  height: 40px;
   margin-left: auto;
   margin-right: auto;
   @media screen and (min-width: 1280px) {
     padding-left: 15px;
     padding-right: 15px;
+    position: absolute;
+    top: 585px;
+    left: 555px;
   }
 }
 .modalEvent__price {
@@ -268,6 +265,13 @@
   line-height: 20px;
   padding-left: 50px;
   text-align: left;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 20px;
+    line-height: 22px;
+    padding-left: 35px;
+    text-align: left;
+  }
   @media screen and (min-width: 1280px) {
     margin-bottom: 20px;
     line-height: 22px;
@@ -291,20 +295,12 @@
   background-image: url("../../src/images/sprite.svg#icon-code");
   fill: #000;
 
-  // @media screen and (min-width: 768px) {
-  //   top: 75px;
-  //   left: 682px;
-  //   width: 45px;
-  //   height: 45px;
-  // }
-
-  // @media screen and (min-width: 1280px) {
-  //   top: 35px;
-  //   left: 1075px;
-  //   width: 40px;
-  //   height: 40px;
-  // }
-
+  @media screen and (min-width: 768px) {
+    left: 0;
+  }
+  @media screen and (min-width: 1280px) {
+    
+  }
   // &:hover, &:focus {
   //   border: 1px solid $btn-modal;
   //   background-color: $title-text-color;

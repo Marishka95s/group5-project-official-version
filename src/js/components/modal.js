@@ -3,9 +3,9 @@ import modalTpl from '../../templates/modalTpl.hbs';
 
 const galleryContainer = document.querySelector('.gallery_list');
 const modalLightbox = document.querySelector('.js-lightbox');
+const modalContent = document.querySelector('.modal__content');
 const closeModalBtn = document.querySelector('.lightbox__button1');
 const lightboxOverlay = document.querySelector('.lightbox__overlay');
-// const modalContent = document.querySelector('.lightbox__content');
 // Modal components
 
 galleryContainer.addEventListener('click', onGalleryContainerClick);
@@ -29,10 +29,10 @@ function onGalleryContainerClick(evt) {
             const data1 = modalTpl({ id, event, promotor, imgUrl, imgAlt, info, date, time, timezone, city, country, attractions, price, link, moreFromThisAuthor, venue });
             console.dir(data);
             console.log({ id, event, promotor, imgUrl, imgAlt, info, date, time, timezone, city, country, attractions, price, link, moreFromThisAuthor, venue })
-            modalLightbox.insertAdjacentHTML('afterbegin', data1);
+            modalContent.insertAdjacentHTML('afterbegin', data1);
             console.log(modalLightbox);
-        }).catch(error => alert(error))
-            ; //
+        })
+            .catch(error => alert(error)); 
     
     if (!modalLightbox.classList.contains('is-open')) {
         modalLightbox.classList.add('is-open');
@@ -51,9 +51,5 @@ function onEscKeyPress(event) {
 
 function onCloseModal() {
     modalLightbox.classList.remove('is-open');
-    clearModalContainer()
-}
-
-function clearModalContainer() {
-    lightboxOverlay.innerHTML = '';
+    modalContent.innerHTML = "";
 }
