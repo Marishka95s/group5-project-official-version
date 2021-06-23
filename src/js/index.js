@@ -1,12 +1,11 @@
 var debounce = require('lodash.debounce');
-
 // Templates
+
 import eventTpl from '../templates/eventTpl.hbs';
 
 // Component
 import Pagination from './components/pagination.js';
 import ApiServiceEvents from './components/apiServiceEvents.js';
-import ApiServiceOneEvent from './components/apiServiceOneEvent.js';  //for test purposes
 import countries from './countries.json';
 import err from './components/error.js';
 import './components/footer.js';
