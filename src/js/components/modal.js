@@ -39,7 +39,7 @@ function onGalleryContainerClick(evt) {
     }
 
     closeModalBtn.addEventListener('click', onCloseModal);
-    lightboxOverlay.addEventListener('click', onCloseModal);
+    // lightboxOverlay.addEventListener('click', onCloseModal);
     window.addEventListener('keydown', onEscKeyPress);   
 };
 
