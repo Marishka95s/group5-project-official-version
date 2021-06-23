@@ -90,7 +90,9 @@ img {
   }
 
   @media screen and (min-width: 1280px) {
-    background-image: url('./images/body/bgBody-desktop@1x.png');
+    margin-top: -50px;
+    background-image: url('../images/body/bgBody-desktop@1x.png');
+
     background-position: center;
     background-size: 100%;
     background-repeat: no-repeat;

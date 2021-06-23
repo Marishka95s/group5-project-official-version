@@ -3,13 +3,10 @@
   --animation-duration: 250ms;
 }
 
-// // потом убрать
-// .modalEvent__icon {
-//   display: none;
-// }
-/* Lightbox */
 .lightbox {
+  position: relative;
   opacity: 0;
+  z-index: 1;
 
   pointer-events: none;
   transition: opacity var(--animation-duration) var(--timing-function);
@@ -32,7 +29,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #fff;
+    background-color: $bg-modal;
     border-radius: 150px 0;
     padding-left: 10px;
     padding-right: 10px;
