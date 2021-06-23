@@ -1,0 +1,194 @@
+.basicLightbox {
+  overflow: scroll;
+  backdrop-filter: blur(3px);
+}
+.logo__icon {
+  width: 20px;
+  height: 20px;
+
+  @media screen and (min-width: 768px) {
+    width: 22px;
+    height: 22px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 32px;
+    height: 32px
+  }
+}
+.btn_close{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color var(--animation-duration) var(--timing-function);
+    outline: none;
+    background-position: center;
+    background-size: 60%;
+    background-repeat: no-repeat;
+}
+
+.team-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  padding: 20px;
+
+  width: 240px;
+  background-color: $bg-modal;
+  margin-top: 310px;
+
+  @media screen and (min-width: 768px) {
+    width: 600px;
+    margin-top: 0;
+  }
+
+  @media screen and (min-width: 1280px) {
+    margin: -30px;
+    width: 1000px;
+  }
+}
+
+.team-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin: 5px;
+
+  width: calc((100% - 40px) / 2);
+
+  @media screen and (min-width: 768px) {
+    width: calc((100% - 160px) / 4);
+  }
+
+  @media screen and (min-width: 1280px) {
+    margin: 10px;
+
+    width: calc((100% - 280px) / 4);
+  }
+}
+
+.team-image {
+  margin-bottom: 10px;
+  margin-top: 5px;
+
+  width: 100%;
+
+  border-radius: 50% 0;
+  box-shadow: 5px 5px 11px -2px $btn-modal;
+}
+
+.team-name {
+  margin-bottom: 5px;
+  color: $title-text-color;
+  font-family: $montserrat;
+  font-weight: 700;
+  font-size: 12px;
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    font-size: 16px;
+  }
+}
+
+.team-role {
+  color: black;
+  font-family: $montserrat;
+  font-size: 12px;
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    font-size: 16px;
+  }  
+}
+
+.team-git {
+  position: absolute;
+
+  top: 73px;
+  right: -9px;
+
+  @media screen and (min-width: 768px) {
+    top: 93px;
+    right: -7px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    top: 150px;
+    right: -15px;
+  }
+
+  &:hover,
+  &:focus {
+    transform: scale(1.3);
+  }
+}
+
+// footer
+
+.team-modal {
+  text-decoration: underline;
+  color: rgb(245, 242, 242);
+  cursor: pointer;
+}
+
+.lightbox__button {
+  display: flex;
+  position: absolute;
+  top: 285px;
+  right: -32px;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  border: 1px solid $title-text-color;
+  border-radius: 50%;
+  background-color: $bg-color;
+  fill: #fff;
+
+  @media screen and (min-width: 768px) {
+    top: -30px;
+    right: -60px;
+    width: 32px;
+    height: 32px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    top: -81px;
+    right: -95px;
+    width: 50px;
+    height: 50px;
+  }
+
+  &:hover, &:focus {
+    border: 1px solid $btn-modal;
+    background-color: $title-text-color;
+    transform: scale(1.05);
+  }
+}
+.close-icon {
+  @media screen and (min-width: 1280px) {
+    width: 16px;
+    height: 16px;
+  }
+}
