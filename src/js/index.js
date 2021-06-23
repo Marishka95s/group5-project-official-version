@@ -1,17 +1,11 @@
 var debounce = require('lodash.debounce');
-<<<<<<< HEAD
-import PicturesApiService from './components/apiService.js';
-import footer from './components/footer.js';
-=======
-
 // Templates
->>>>>>> dev
+
 import eventTpl from '../templates/eventTpl.hbs';
 
 // Component
 import Pagination from './components/pagination.js';
 import ApiServiceEvents from './components/apiServiceEvents.js';
-import ApiServiceOneEvent from './components/apiServiceOneEvent.js';  //for test purposes
 import countries from './countries.json';
 import err from './components/error.js';
 import './components/footer.js';
@@ -31,10 +25,6 @@ import '@pnotify/mobile/dist/PNotifyMobile.css';
 import { error } from '@pnotify/core/dist/PNotify.js';
 
 import '../sass/main.scss';
-<<<<<<< HEAD
-
-
-=======
 import '../../node_modules/basiclightbox/dist/basicLightbox.min.css';
 
 
@@ -208,4 +198,3 @@ function onPageClick(evt) {
   pagination.createPaginationMarkup();
     
 }
->>>>>>> dev
