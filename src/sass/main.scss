@@ -3,9 +3,11 @@
 
 @import './base/common';
 @import './base/normalize';
+@import './base/choices';
 
+@import './components/preloader.scss';
 @import './components/footer';
 @import './components/gallery';
 @import './components/header';
-@import './components/modal';
 @import './components/pagination';
+@import './components/team-lightbox';
