@@ -53,3 +53,4 @@ function onCloseModal() {
     modalLightbox.classList.remove('is-open');
     modalContent.innerHTML = "";
 }
+//
