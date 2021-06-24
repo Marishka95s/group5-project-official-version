@@ -4,7 +4,7 @@ import modalTpl from '../../templates/modalTpl.hbs';
 const galleryContainer = document.querySelector('.gallery_list');
 const modalLightbox = document.querySelector('.js-lightbox');
 const modalContent = document.querySelector('.modal__content');
-const closeModalBtn = document.querySelector('.lightbox__closeModalButton');
+const closeModalBtn = document.querySelector('.lightbox__closeModalBtn');
 const lightboxOverlay = document.querySelector('.lightbox__overlay');
 // Modal components
 
