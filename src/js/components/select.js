@@ -13,5 +13,5 @@ const defaultSelect = () => {
 defaultSelect()
 
 const selectEl = document.querySelector('.choices')
-console.log(selectEl)
+// console.log(selectEl)
 selectEl.setAttribute('aria-label', 'country-select')
