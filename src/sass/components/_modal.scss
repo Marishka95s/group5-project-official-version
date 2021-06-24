@@ -67,7 +67,7 @@
 //   transform: scale(1);
 // }
 
-.lightbox__button1 {
+.lightbox__buttonForModalClose {
   display: flex;
   position: absolute;
   top: 30px;
@@ -118,12 +118,6 @@
     width: 25px;
     height: 25px;    
   }
-}
-
-
-.lightbox__button:hover,
-.lightbox__button:focus {
-  background-color: #dc56c5;
 }
 
 .modalEvent__image--round {
