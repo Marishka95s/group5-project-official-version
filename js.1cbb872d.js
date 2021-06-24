@@ -22,7 +22,7 @@ var t,e=arguments[3];!function(e,n){"object"==typeof exports&&"undefined"!=typeo
 },{"@pnotify/core":"txz9"}],"Y9mY":[function(require,module,exports) {
 const n=document.getElementById("myBtn");function o(){document.body.scrollTop>100||document.documentElement.scrollTop>100?n.style.display="block":n.style.display="none"}window.onscroll=function(){o()},n.addEventListener("click",n=>{n.preventDefault(),o(),window.scroll(0,0)});
 },{}],"sCty":[function(require,module,exports) {
-"use strict";var e=t(require("../countries.json"));function t(e){return e&&e.__esModule?e:{default:e}}const o=()=>{const t=document.querySelector(".select-js");new Choices(t,{searchEnabled:!1,position:"bottom",itemSelectText:"",addItems:!0,choices:e.default,resetScrollPosition:!1})};o();const c=document.querySelector(".choices");console.log(c),c.setAttribute("aria-label","country-select");
+"use strict";var e=t(require("../countries.json"));function t(e){return e&&e.__esModule?e:{default:e}}const o=()=>{const t=document.querySelector(".select-js");new Choices(t,{searchEnabled:!1,position:"bottom",itemSelectText:"",addItems:!0,choices:e.default,resetScrollPosition:!1})};o();const c=document.querySelector(".choices");c.setAttribute("aria-label","country-select");
 },{"../countries.json":"IF5F"}],"meUZ":[function(require,module,exports) {
 const e=document.querySelector(".bg-preloader");window.onload=(()=>{e.remove()});
 },{}],"BNjD":[function(require,module,exports) {
