@@ -9,10 +9,7 @@ import countries from './countries.json';
 import err from './components/error.js';
 import './components/footer.js';
 import './components/select.js';
-import './components/searchInput.js';
-import './components/searchByCountry.js';
 import './components/preloader.js';
-import './components/firstSearch.js';
 import './components/teamLightbox.js';
 import './components/modal.js';
 
