@@ -61,7 +61,7 @@ inputRef.addEventListener('input', debounce(onSearch, 1300));
 function onSearch(event) {
     apiEvents.query = event.target.value.toLowerCase().trim();
 
-    console.log('apiEvents.query:', apiEvents.query);
+    // console.log('apiEvents.query:', apiEvents.query);
 
     if (apiEvents.query !== ' ') { // пустой позволим, чтобы сортировка по стране срабатывала
       
@@ -80,13 +80,13 @@ const inner = document.querySelector('[data-choice="active"]')
 //const cntrySrch = new Api(); -- апи стартуем один экземпляр на всех, чтоб он хранил в себе все состояния запросов
 inner.addEventListener('change', () => {
     const selectedCountry = inner.innerText;
-    console.log(selectedCountry);
+    // console.log(selectedCountry);
     let searchTerm = selectedCountry;
     let countryValue = countries.find(country => country.label === searchTerm).value;
 
     apiEvents.countryCodeId = countryValue;
 
-    console.log(apiEvents.countryCode);
+    // console.log(apiEvents.countryCode);
     eventContainer.innerHTML = ''; ///////////////////// Jack: code line was added
     pagination.ref.innerHTML = ''; //// before "fetchEvents" we clear pagination
     fetchEvents();

@@ -45,7 +45,6 @@ export default class ApiService {
                 const currentPageNumber = data?.page?.number;
                 const totalPages = data?.page?.totalPages;
 
-                ///////////////////// for pagination data update         
                 this.page = data?.page?.number;
 
                 this.totalPages = data?.page?.totalPages;

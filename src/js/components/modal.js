@@ -14,12 +14,12 @@ let currentSlide = null;
 
 function onGalleryContainerClick(evt) {
     if (!evt.target.classList.contains('event_img') && !evt.target.classList.contains('event__info')) { return };
-    console.log(evt.target)
+    // console.log(evt.target)
 
     currentSlide = evt.target;
     let necessaryId = currentSlide.parentNode.dataset.value;
-    console.log(currentSlide.parentNode);
-    console.log(necessaryId);
+    // console.log(currentSlide.parentNode);
+    // console.log(necessaryId);
 
     const apiEvents = new ApiServiceModal(necessaryId);
     apiEvents.eventId = necessaryId;
@@ -30,7 +30,7 @@ function onGalleryContainerClick(evt) {
             console.dir(data);
             console.log({ id, event, promotor, imgUrl, imgAlt, info, date, time, timezone, city, country, attractions, price, link, moreFromThisAuthor, venue })
             modalContent.insertAdjacentHTML('afterbegin', data1);
-            console.log(modalLightbox);
+            // console.log(modalLightbox);
         })
             .catch(error => alert(error)); 
     
